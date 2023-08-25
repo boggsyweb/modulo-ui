@@ -16,116 +16,113 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
+const borderRadius = '5px';
+
+const buttonConfig = {
+  small: { fontSize: '1rem', padding: '8px 16px', iconSize: '20px' },
+  medium: { fontSize: '1.2rem', padding: '10px 18px', iconSize: '24px' },
+  large: { fontSize: '1.32rem', padding: '10px 18px', iconSize: '28px' },
+};
+
 const getTheme = (buttonColor: keyof typeof colorThemes) => colorThemes[buttonColor];
+
+const getButtonStyle = (props: ButtonProps, theme: any) => {
+  const sizeConfig = buttonConfig[props.buttonSize || 'medium'];
+  let styles = `
+    background-color: ${theme.primaryShade};
+    color: ${theme.secondaryShade};
+    padding: ${sizeConfig.padding};
+    border-radius: ${props.oval ? '100px' : borderRadius};
+    ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
+  `;
+
+  switch (props.buttonStyle) {
+    case 'outline':
+      styles += `
+        background-color: transparent;
+        border: 1.5px solid ${theme.primaryShade};
+        color: ${theme.primaryShade};
+      `;
+      break;
+    case 'ghostHover':
+    case 'link':
+      styles += `
+        background-color: transparent;
+        color: ${theme.primaryShade};
+      `;
+      if (props.buttonStyle === 'ghostHover') {
+        styles += `
+          &:hover { background-color: ${theme.hoverShade}; }
+        `;
+      } else {
+        styles += `
+          text-decoration: none;
+          &:hover { text-decoration: underline; }
+        `;
+      }
+      break;
+    default:
+      break;
+  }
+
+  return styles;
+};
+
+const renderIcon = (size: string, IconComponent: React.ElementType) => (
+  <IconWrapper size={size}>
+    <IconComponent />
+  </IconWrapper>
+);
 
 const StyledButton = styled.button<ButtonProps>`
   display: flex;
+  gap: 0.7rem;
   align-items: center;
   justify-content: space-around;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   border: none;
-  border-radius: 5px;
+  border-radius: ${borderRadius};
   cursor: pointer;
-  font-size: ${(props) => {
-    if (props.buttonSize === 'small') return '1rem';
-    if (props.buttonSize === 'medium') return '1.2rem';
-    if (props.buttonSize === 'large') return '1.32rem';
-    return '1rem'; 
-  }};
+  font-size: ${(props) => buttonConfig[props.buttonSize || 'medium'].fontSize};
   ${(props) => {
-    const theme = getTheme(props.buttonColor as keyof typeof colorThemes);
-    const padding = props.buttonSize === 'small' ? '8px 16px' : '10px 18px';
-    const borderRadius = props.oval ? '100px' : '5px';
-    const disabledStyles = props.disabled
-      ? `
-        opacity: 0.5;
-        cursor: default;
-        pointer-events: none;
-      `
-      : '';
+    const theme = getTheme(props.buttonColor || 'indigo');
+    return getButtonStyle(props, theme);
+  }};
+`;
 
-    if (props.buttonStyle === 'outline') {
-      return `
-        background-color: transparent;
-        border: 1.5px solid ${theme.backgroundColor};
-        color: ${theme.backgroundColor};
-        padding: ${padding};
-        border-radius: ${borderRadius};
-        ${disabledStyles}
-      `;
-    }
-    if (props.buttonStyle === 'ghostHover') {
-      return `
-        background-color: rgba(${theme.backgroundColor}, 0);
-        color: ${theme.backgroundColor};
-        &:hover {
-          background-color: rgba(${theme.backgroundColor}, 0.4);
-        }
-        padding: ${padding};
-        border-radius: ${borderRadius};
-        ${disabledStyles}
-      `;
-    }
-    if (props.buttonStyle === 'link') {
-      return `
-        background-color: transparent;
-        color: ${theme.backgroundColor};
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-        padding: ${padding};
-        border-radius: ${borderRadius};
-        ${disabledStyles}
-      `;
-    }
-  
-    return `
-      background-color: ${theme.backgroundColor};
-      color: ${theme.textColor};
-      padding: ${padding};
-      border-radius: ${borderRadius};
-      ${disabledStyles}
-    `;
-  }}
+const IconWrapper = styled.span<{ size: string }>`
+  width: ${(props) => props.size};
+  height: ${(props) => props.size};
 `;
 
 const Button: React.FC<ButtonProps> = ({
   buttonColor = 'indigo',
   buttonSize = 'medium',
   buttonStyle = 'solid',
-  icon = false,
+  icon,
   iconStyle = 'search',
   iconPosition = 'left',
-  oval = false,
-  disabled = false,
+  oval,
+  disabled,
   label,
   onClick,
 }: ButtonProps) => {
-
-    const IconComponent = icon && iconStyle && Icons[iconStyle];
-    const iconSize = buttonSize === 'small' ? '20px' : buttonSize === 'medium' ? '24px' : '28px';
-
+  const IconComponent = icon && iconStyle && Icons[iconStyle];
 
   return (
-    <StyledButton 
-    buttonColor={buttonColor} 
-    buttonStyle={buttonStyle} 
-    buttonSize={buttonSize} 
-    oval={oval} 
-    disabled={disabled} 
-    onClick={onClick}>
-     {iconPosition === 'left' && IconComponent && (
-        <span style={{ width: iconSize, height: iconSize, marginRight: '0.5rem' }}>
-          <IconComponent />
-        </span>
-      )}   
+    <StyledButton
+      buttonColor={buttonColor}
+      buttonStyle={buttonStyle}
+      buttonSize={buttonSize}
+      oval={oval}
+      disabled={disabled}
+      onClick={onClick}
+    >
+        {iconPosition === 'left' && IconComponent && renderIcon(buttonConfig[buttonSize || 'medium'].iconSize, IconComponent)}
+
       {label}
-      {iconPosition === 'right' && IconComponent && (
-        <span style={{ width: iconSize, height: iconSize, marginLeft: '0.5rem' }}>
-          <IconComponent />
-        </span>
-      )}
+        {iconPosition === 'right' && IconComponent && renderIcon(buttonConfig[buttonSize || 'medium'].iconSize, IconComponent)}
+
     </StyledButton>
   );
 };

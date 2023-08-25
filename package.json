@@ -1,6 +1,6 @@
 {
   "name": "festa-do-modulo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A reusable React component library",
   "scripts": {
     "rollup-build-lib": "rollup -c",

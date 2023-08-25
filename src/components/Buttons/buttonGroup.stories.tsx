@@ -1,23 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
+import buttonGroup from './ButtonGroup';
 
 const meta = {
-    title: "Library/Buttons/Button",
-    component: Button, 
+    title: "Library/Buttons/ButtonGroup",
+    component: buttonGroup,
     tags: ["autodocs"],
     parameters: {
         layout: 'centered'
-      },
-      args: {
-        label: 'Button',
+    },
+    args: {
+        labels: ['Button1', 'Button2', 'Button3'],
+        groupLength: 3,
+        buttonSize: 'medium',
         buttonColor: 'indigo',
         icon: false,
         disabled: false,
-        oval: false
-      },
-    } satisfies Meta<typeof Button>;
-    export default meta;
-    type Story = StoryObj<typeof meta>;
+        ovalEnds: false,
+        iconPosition: 'first'
+    },
+} satisfies Meta<typeof buttonGroup>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Solid: Story = {
     args: {
@@ -34,9 +37,8 @@ export const ghostHover: Story = {
         buttonStyle: 'ghostHover'
     },
 };
-export const link: Story = {
+export const Oval: Story = {
     args: {
-        buttonStyle: 'link'
+        ovalEnds: true
     },
 };
-

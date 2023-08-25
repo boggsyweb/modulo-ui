@@ -1,48 +1,81 @@
 const colorThemes = {
     red: {
-      backgroundColor: '#FF0000',
-      textColor: '#F5F5F5',
+      primaryShade: '#FF0000',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#ff000040'
     },
     pink: {
-      backgroundColor: '#FFC0CB',
-      textColor: '#3D000A',
+      primaryShade: '#FFC0CB',
+      secondaryShade: '#333333',
+      hoverShade: '#FFC0CB40'
+
     },
     orange: {
-      backgroundColor: '#F87315',
-      textColor: '#F5F5F5',
+      primaryShade: '#F87315',
+      secondaryShade: '#333333',
+      hoverShade: '#F8731540'
+
     },
     yellow: {
-      backgroundColor: '#FFFF00',
-      textColor: '#292900',
+      primaryShade: '#FFFF00',
+      secondaryShade: '#333333',
+      hoverShade: '#FFFF0040'
+
     },
     green: {
-      backgroundColor: '#00E000',
-      textColor: '#002900',
+      primaryShade: '#00E000',
+      secondaryShade: '#333333',
+      hoverShade: '#00E00040'
+
     },
     teal: {
-      backgroundColor: '#0CA9A9',
-      textColor: '#F5F5F5',
+      primaryShade: '#0CA9A9',
+      secondaryShade: '#0C0C0C',
+      hoverShade: '#0CA9A940'
+
     },
     blue: {
-      backgroundColor: '#0000FF',
-      textColor: '#F5F5F5',
+      primaryShade: '#0000FF',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#0000FF40'
+
     },
     cyan: {
-      backgroundColor: '#01FFFF',
-      textColor: '#002929',
+      primaryShade: '#01FFFF',
+      secondaryShade: '#333333',
+      hoverShade: '#01FFFF40'
+
     },
     indigo: {
-      backgroundColor: '#5035FF',
-      textColor: '#F5F5F5',
+      primaryShade: '#5135FF',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#5135FF40'
+
     },
     purple: {
-      backgroundColor: '#800080',
-      textColor: '#F5F5F5',
+      primaryShade: '#9002D0',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#9002D040'
+
     },
     gray: {
-      backgroundColor: '#6A7280',
-      textColor: '#F5F5F5',
+      primaryShade: '#6A7280',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#6A728040'
+
     },
+    black: {
+      primaryShade: '#0B0000',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#0B000040'
+
+    },
+    white: {
+      primaryShade: '#F5F5F5',
+      secondaryShade: '#0C0C0C',
+      hoverShade: '#F5F5F540'
+
+    }
     
   };
   
