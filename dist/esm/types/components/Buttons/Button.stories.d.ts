@@ -3,7 +3,7 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        buttonColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | undefined;
+        buttonColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
         buttonSize?: "small" | "medium" | "large" | undefined;
         buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
         icon?: boolean | undefined;

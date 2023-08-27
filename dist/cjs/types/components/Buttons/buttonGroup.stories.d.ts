@@ -8,22 +8,25 @@ declare const meta: {
         buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
         icon?: boolean | undefined;
         iconStyle?: "search" | "settings" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "close" | undefined;
-        iconPosition?: "left" | "right" | undefined;
-        oval?: boolean | undefined;
+        iconPosition?: "first" | "last" | undefined;
+        ovalEnds?: boolean | undefined;
         disabled?: boolean | undefined;
-        label?: string | undefined;
-        onClick?: (() => void) | undefined;
+        groupLength?: number | undefined;
+        labels?: string[] | undefined;
+        onClick?: ((index: number) => void) | undefined;
     }>;
     tags: string[];
     parameters: {
         layout: string;
     };
     args: {
-        label: string;
+        labels: string[];
+        groupLength: number;
         buttonColor: "indigo";
         icon: false;
         disabled: false;
-        oval: false;
+        ovalEnds: false;
+        iconPosition: "first";
     };
 };
 export default meta;
@@ -31,4 +34,5 @@ type Story = StoryObj<typeof meta>;
 export declare const Solid: Story;
 export declare const Outline: Story;
 export declare const ghostHover: Story;
-export declare const link: Story;
+export declare const Icon: Story;
+export declare const Oval: Story;

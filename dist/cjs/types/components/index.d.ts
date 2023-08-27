@@ -1,1 +1,2 @@
-export { default as Button } from './Buttons';
+export * from '../components/Buttons';
+export { default as Card } from './Cards';

@@ -1,47 +1,68 @@
 declare const colorThemes: {
     red: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     pink: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     orange: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     yellow: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     green: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     teal: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     blue: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     cyan: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     indigo: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     purple: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     gray: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
+    };
+    black: {
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
+    };
+    white: {
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
 };
 export default colorThemes;

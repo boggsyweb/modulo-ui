@@ -2,48 +2,69 @@ import React from 'react';
 
 declare const colorThemes: {
     red: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     pink: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     orange: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     yellow: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     green: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     teal: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     blue: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     cyan: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     indigo: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     purple: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
     gray: {
-        backgroundColor: string;
-        textColor: string;
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
+    };
+    black: {
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
+    };
+    white: {
+        primaryShade: string;
+        secondaryShade: string;
+        hoverShade: string;
     };
 };
 
@@ -76,4 +97,37 @@ type ButtonProps = {
 };
 declare const Button: React.FC<ButtonProps>;
 
-export { Button };
+type buttonGroupProps = {
+    buttonColor?: keyof typeof colorThemes;
+    buttonSize?: 'small' | 'medium' | 'large';
+    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    icon?: boolean;
+    iconStyle?: keyof typeof Icons;
+    iconPosition?: 'first' | 'last';
+    ovalEnds?: boolean;
+    disabled?: boolean;
+    groupLength?: number;
+    labels?: string[];
+    onClick?: (index: number) => void;
+};
+declare const buttonGroup: React.FC<buttonGroupProps>;
+
+type CardProps = {
+    title?: boolean;
+    CardTitle?: string;
+    subtitle?: boolean;
+    CardSubtitle?: string;
+    description?: boolean;
+    CardDescription?: string;
+    CardStyle?: 'standard' | 'border' | 'shadow';
+    CardSize?: 'small' | 'medium' | 'large';
+    image?: boolean;
+    ImageAlt?: string;
+    ImageSrc?: string;
+    caption?: boolean;
+    ImageCaption?: string;
+    divider?: boolean;
+};
+declare const Card: React.FC<CardProps>;
+
+export { Button, buttonGroup as ButtonGroup, Card };

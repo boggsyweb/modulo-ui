@@ -11,7 +11,6 @@ const meta = {
     args: {
         labels: ['Button1', 'Button2', 'Button3'],
         groupLength: 3,
-        buttonSize: 'medium',
         buttonColor: 'indigo',
         icon: false,
         disabled: false,
@@ -35,6 +34,11 @@ export const Outline: Story = {
 export const ghostHover: Story = {
     args: {
         buttonStyle: 'ghostHover'
+    },
+};
+export const Icon: Story = {
+    args: {
+        icon: true
     },
 };
 export const Oval: Story = {

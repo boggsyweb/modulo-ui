@@ -25,77 +25,69 @@ const buttonConfig = {
 
 const getTheme = (buttonColor: keyof typeof colorThemes) => colorThemes[buttonColor];
 
-const getButtonStyles = (props: buttonGroupProps, theme: any) => {
-  const sizeConfig = buttonConfig[props.buttonSize || 'medium'];
-  let styles = `
-    background-color: ${theme.primaryShade};
-    color: ${theme.secondaryShade};
-    padding: ${sizeConfig.padding};
-    ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
-  `;
-  switch (props.buttonStyle) {
-    case 'outline':
-      styles += `
-        background-color: transparent;
-        border: 1.5px solid ${theme.primaryShade};
-        color: ${theme.primaryShade};
-      `;
-      break;
-    case 'ghostHover':
-    case 'link':
-      styles += `
-        background-color: transparent;
-        color: ${theme.primaryShade};
-      `;
-      switch (props.buttonStyle) {
-        case 'ghostHover':
-          styles += `
-            &:hover { background-color: ${theme.hoverShade}; }
-          `;
-          break;
-        case 'link':
-          styles += `
-            text-decoration: none;
-            &:hover { text-decoration: underline; }
-          `;
-          break;
-      }
-      break;
-    default:
-      break;
-  }
-
-  return styles;
- 
-}
 const StyledButton = styled.button<buttonGroupProps>`
-display: flex;
-gap: 0.7rem;
-align-items: center;
-justify-content: space-around;
-font-family: inherit;
-border: none;
-cursor: pointer;
-font-size: ${(props) => buttonConfig[props.buttonSize || 'medium'].fontSize};
-${(props) => {
-  const theme = getTheme(props.buttonColor || 'indigo');
-  return getButtonStyles(props, theme);
-}};
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: space-around;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: ${(props) => buttonConfig[props.buttonSize || 'medium'].fontSize};
+  ${(props) => {
+    const theme = getTheme(props.buttonColor || 'indigo');
+    return `
+      background-color: ${theme.primaryShade};
+      color: ${theme.secondaryShade};
+      padding: ${buttonConfig[props.buttonSize || 'medium'].padding};
+      ${
+        props.disabled
+          ? 'opacity: 0.5; cursor: default; pointer-events: none;'
+          : ''
+      }
+    `;
+  }}
+  ${(props) => {
+    const theme = getTheme(props.buttonColor || 'indigo');
+    switch (props.buttonStyle) {
+      case 'outline':
+        return `
+          background-color: transparent;
+          border: 1.5px solid ${theme.primaryShade};
+          color: ${theme.primaryShade};
+        `;
+      case 'ghostHover':
+      case 'link':
+        let styles = `
+          background-color: transparent;
+          color: ${theme.primaryShade};
+        `;
+        switch (props.buttonStyle) {
+          case 'ghostHover':
+            styles += `
+              &:hover { background-color: ${theme.hoverShade}; }
+            `;
+            break;
+          case 'link':
+            styles += `
+              text-decoration: none;
+              &:hover { text-decoration: underline; }
+            `;
+            break;
+        }
+        return styles;
+      default:
+        return '';
+    }
+  }}
 `;
 
-const FirstButton = styled(StyledButton)<buttonGroupProps>`
-  border-radius: ${(props) => (props.ovalEnds ? '100px 0 0 100px' : '5px 0 0 5px')};
+const ButtonArray = styled(StyledButton)<{ isFirst?: boolean; isLast?: boolean }>`
+  border-radius: ${(props) =>
+    props.isFirst ? (props.ovalEnds ? '100px 0 0 100px' : '5px 0 0 5px') : ''};
+  border-radius: ${(props) =>
+    props.isLast ? (props.ovalEnds ? '0 100px 100px 0' : '0 5px 5px 0') : ''};
 `;
-
-const MiddleButton = styled(StyledButton)`
-  border-radius: 0;
-`;
-
-const LastButton = styled(StyledButton)<buttonGroupProps>`
-  border-radius: ${(props) => (props.ovalEnds ? '0 100px 100px 0' : '0 5px 5px 0')};
-`;
-
-
 
 const IconWrapper = styled.span<{ size: string }>`
   width: ${(props) => props.size};
@@ -122,50 +114,48 @@ const buttonGroup: React.FC<buttonGroupProps> = ({
 }: buttonGroupProps) => {
   const IconComponent = icon && iconStyle && Icons[iconStyle];
 
-  const renderButton = (index: number) => {
-    const isFirst = index === 0;
-    const isLast = index === groupLength - 1;
-    const buttonProps = {
-      buttonColor,
-      buttonStyle,
-      buttonSize,
-      ovalEnds,
-      disabled,
-      onClick: () => onClick && onClick(index),
-    };
+  return (
+    <ButtonGroupWrapper>
+      {Array.from({ length: groupLength }, (_, index) => {
+        const isFirst = index === 0;
+        const isLast = index === groupLength - 1;
 
-    return (
-      <React.Fragment key={index}>
-        {isFirst && (
-          <FirstButton {...buttonProps}>
-            {IconComponent && iconPosition === 'first' && (
-              <IconWrapper size={buttonConfig[buttonSize || 'medium'].iconSize}>
-                <IconComponent />
-              </IconWrapper>
-            )}
+        return (
+          <ButtonArray
+            key={index}
+            isFirst={isFirst}
+            isLast={isLast}
+            ovalEnds={ovalEnds}
+            buttonColor={buttonColor}
+            buttonStyle={buttonStyle}
+            buttonSize={buttonSize}
+            disabled={disabled}
+            onClick={() => onClick && onClick(index)}
+          >
+            {IconComponent &&
+              iconPosition === 'first' &&
+              isFirst && (
+                <IconWrapper
+                  size={buttonConfig[buttonSize || 'medium'].iconSize}
+                >
+                  <IconComponent />
+                </IconWrapper>
+              )}
             {labels[index] || `Button ${index + 1}`}
-          </FirstButton>
-        )}
-        {!isFirst && !isLast && (
-          <MiddleButton {...buttonProps}>
-            {labels[index] || `Button ${index + 1}`}
-          </MiddleButton>
-        )}
-        {isLast && (
-          <LastButton {...buttonProps}>
-            {labels[index] || `Button ${index + 1}`}
-            {IconComponent && iconPosition === 'last' && (
-              <IconWrapper size={buttonConfig[buttonSize || 'medium'].iconSize}>
-                <IconComponent />
-              </IconWrapper>
-            )}
-          </LastButton>
-        )}
-      </React.Fragment>
-    );
-  };
-
-  return <ButtonGroupWrapper>{Array.from({ length: groupLength }, (_, index) => renderButton(index))}</ButtonGroupWrapper>;
+            {IconComponent &&
+              iconPosition === 'last' &&
+              isLast && (
+                <IconWrapper
+                  size={buttonConfig[buttonSize || 'medium'].iconSize}
+                >
+                  <IconComponent />
+                </IconWrapper>
+              )}
+          </ButtonArray>
+        );
+      })}
+    </ButtonGroupWrapper>
+  );
 };
 
 export default buttonGroup;
