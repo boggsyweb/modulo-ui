@@ -10,12 +10,11 @@ const meta = {
     },
     args: {
         labels: ['Button1', 'Button2', 'Button3'],
-        groupLength: 3,
         buttonColor: 'indigo',
         icon: false,
         disabled: false,
-        ovalEnds: false,
-        iconPosition: 'first'
+        oval: false,
+        iconPosition: 'left'
     },
 } satisfies Meta<typeof buttonGroup>;
 export default meta;
@@ -43,6 +42,6 @@ export const Icon: Story = {
 };
 export const Oval: Story = {
     args: {
-        ovalEnds: true
+        oval: true
     },
 };

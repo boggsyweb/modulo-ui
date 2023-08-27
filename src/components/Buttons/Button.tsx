@@ -13,10 +13,10 @@ type ButtonProps = {
   oval?: boolean;
   disabled?: boolean;
   label?: string;
-  onClick?: () => void;
+  isFirst?: boolean;
+  isLast?: boolean;
+   onClick?: () => void;
 };
-
-const borderRadius = '5px';
 
 const buttonConfig = {
   small: { fontSize: '1rem', padding: '8px 16px', iconSize: '20px' },
@@ -32,7 +32,7 @@ const getButtonStyle = (props: ButtonProps, theme: any) => {
     background-color: ${theme.primaryShade};
     color: ${theme.secondaryShade};
     padding: ${sizeConfig.padding};
-    border-radius: ${props.oval ? '100px' : borderRadius};
+   
     ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
   `;
 
@@ -81,7 +81,12 @@ const StyledButton = styled.button<ButtonProps>`
   justify-content: space-around;
   font-family: inherit;
   border: none;
-  border-radius: ${borderRadius};
+  border-radius: ${(props) => {
+    if (props.isFirst && props.isLast) return props.oval ? '100px' : '5px'; 
+    if (props.isFirst) return props.oval ? '100px 0 0 100px' : '5px 0 0 5px'; 
+    if (props.isLast) return props.oval ? '0 100px 100px 0' : '0 5px 5px 0'; 
+    return '0'; 
+  }};
   cursor: pointer;
   font-size: ${(props) => buttonConfig[props.buttonSize || 'medium'].fontSize};
   ${(props) => {
@@ -99,11 +104,13 @@ const Button: React.FC<ButtonProps> = ({
   buttonColor = 'indigo',
   buttonSize = 'medium',
   buttonStyle = 'solid',
-  icon,
+  icon = false,
   iconStyle = 'search',
   iconPosition = 'left',
-  oval,
-  disabled,
+  oval = false,
+  disabled = false,
+  isFirst = true,
+  isLast = true,
   label,
   onClick,
 }: ButtonProps) => {
@@ -116,6 +123,8 @@ const Button: React.FC<ButtonProps> = ({
       buttonSize={buttonSize}
       oval={oval}
       disabled={disabled}
+      isFirst={isFirst}
+      isLast={isLast}
       onClick={onClick}
     >
         {iconPosition === 'left' && IconComponent && renderIcon(buttonConfig[buttonSize || 'medium'].iconSize, IconComponent)}
