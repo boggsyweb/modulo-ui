@@ -8,10 +8,9 @@ declare const meta: {
         buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
         icon?: boolean | undefined;
         iconStyle?: "search" | "settings" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "close" | undefined;
-        iconPosition?: "first" | "last" | undefined;
-        ovalEnds?: boolean | undefined;
+        iconPosition?: "left" | "right" | undefined;
+        oval?: boolean | undefined;
         disabled?: boolean | undefined;
-        groupLength?: number | undefined;
         labels?: string[] | undefined;
         onClick?: ((index: number) => void) | undefined;
     }>;
@@ -21,12 +20,11 @@ declare const meta: {
     };
     args: {
         labels: string[];
-        groupLength: number;
         buttonColor: "indigo";
         icon: false;
         disabled: false;
-        ovalEnds: false;
-        iconPosition: "first";
+        oval: false;
+        iconPosition: "left";
     };
 };
 export default meta;

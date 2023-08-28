@@ -1,4 +1,5 @@
 import React from 'react';
+import colorThemes from '../colorThemes';
 type CardProps = {
     title?: boolean;
     CardTitle?: string;
@@ -14,6 +15,11 @@ type CardProps = {
     caption?: boolean;
     ImageCaption?: string;
     divider?: boolean;
+    buttons?: boolean;
+    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    buttonLabels?: string[];
+    buttonColor?: keyof typeof colorThemes;
+    onClick?: (index: number) => void;
 };
 declare const Card: React.FC<CardProps>;
 export default Card;

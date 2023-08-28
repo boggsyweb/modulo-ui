@@ -12,6 +12,9 @@ declare const meta: {
         oval?: boolean | undefined;
         disabled?: boolean | undefined;
         label?: string | undefined;
+        isFirst?: boolean | undefined;
+        isLast?: boolean | undefined;
+        className?: string | undefined;
         onClick?: (() => void) | undefined;
     }>;
     tags: string[];

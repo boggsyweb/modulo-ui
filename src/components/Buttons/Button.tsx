@@ -15,6 +15,7 @@ type ButtonProps = {
   label?: string;
   isFirst?: boolean;
   isLast?: boolean;
+  className?: string;
    onClick?: () => void;
 };
 
@@ -112,6 +113,7 @@ const Button: React.FC<ButtonProps> = ({
   isFirst = true,
   isLast = true,
   label,
+  className,
   onClick,
 }: ButtonProps) => {
   const IconComponent = icon && iconStyle && Icons[iconStyle];
@@ -125,6 +127,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       isFirst={isFirst}
       isLast={isLast}
+      className={className}
       onClick={onClick}
     >
         {iconPosition === 'left' && IconComponent && renderIcon(buttonConfig[buttonSize || 'medium'].iconSize, IconComponent)}

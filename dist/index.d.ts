@@ -93,24 +93,26 @@ type ButtonProps = {
     oval?: boolean;
     disabled?: boolean;
     label?: string;
+    isFirst?: boolean;
+    isLast?: boolean;
+    className?: string;
     onClick?: () => void;
 };
 declare const Button: React.FC<ButtonProps>;
 
-type buttonGroupProps = {
+type ButtonGroupProps = {
     buttonColor?: keyof typeof colorThemes;
     buttonSize?: 'small' | 'medium' | 'large';
     buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
     icon?: boolean;
     iconStyle?: keyof typeof Icons;
-    iconPosition?: 'first' | 'last';
-    ovalEnds?: boolean;
+    iconPosition?: 'left' | 'right';
+    oval?: boolean;
     disabled?: boolean;
-    groupLength?: number;
     labels?: string[];
     onClick?: (index: number) => void;
 };
-declare const buttonGroup: React.FC<buttonGroupProps>;
+declare const ButtonGroup: React.FC<ButtonGroupProps>;
 
 type CardProps = {
     title?: boolean;
@@ -127,7 +129,12 @@ type CardProps = {
     caption?: boolean;
     ImageCaption?: string;
     divider?: boolean;
+    buttons?: boolean;
+    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    buttonLabels?: string[];
+    buttonColor?: keyof typeof colorThemes;
+    onClick?: (index: number) => void;
 };
 declare const Card: React.FC<CardProps>;
 
-export { Button, buttonGroup as ButtonGroup, Card };
+export { Button, ButtonGroup, Card };

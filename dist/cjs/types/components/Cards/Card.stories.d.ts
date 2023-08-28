@@ -17,6 +17,11 @@ declare const meta: {
         caption?: boolean | undefined;
         ImageCaption?: string | undefined;
         divider?: boolean | undefined;
+        buttons?: boolean | undefined;
+        buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
+        buttonLabels?: string[] | undefined;
+        buttonColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        onClick?: ((index: number) => void) | undefined;
     }>;
     tags: string[];
     parameters: {
@@ -28,6 +33,8 @@ declare const meta: {
         CardDescription: string;
         ImageSrc: string;
         ImageCaption: string;
+        buttons: false;
+        buttonLabels: string[];
     };
 };
 export default meta;
@@ -35,3 +42,4 @@ type Story = StoryObj<typeof meta>;
 export declare const Standard: Story;
 export declare const Border: Story;
 export declare const Shadow: Story;
+export declare const Buttons: Story;

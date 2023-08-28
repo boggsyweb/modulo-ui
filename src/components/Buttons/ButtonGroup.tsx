@@ -23,12 +23,23 @@ const GroupContainer = styled.div`
 `;
 
 const StyledButton = styled(Button)<ButtonGroupProps>`
-  border-radius: ${(props) => 
-    (props.labels && props.labels.length > 0 
-      ? '5px 0 0 5px' : '5px')};
-    ${(props) => (props.labels && props.labels.length > 0 
-      ? 'border-radius: 0 5px 5px 0;' : '')};
+  border-radius: ${(props) =>
+    props.isFirst
+      ? props.isLast
+        ? props.oval
+          ? '100px'
+          : '5px'
+        : props.oval
+        ? '100px 0 0 100px'
+        : '5px 0 0 5px'
+      : props.isLast
+      ? props.oval
+        ? '0 100px 100px 0'
+        : '0 5px 5px 0'
+      : '0'};
 `;
+
+
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
   buttonColor = 'indigo',
   buttonSize = 'medium',

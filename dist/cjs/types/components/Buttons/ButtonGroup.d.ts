@@ -1,18 +1,17 @@
 import React from 'react';
 import colorThemes from '../colorThemes';
 import { Icons } from '../Icons';
-type buttonGroupProps = {
+type ButtonGroupProps = {
     buttonColor?: keyof typeof colorThemes;
     buttonSize?: 'small' | 'medium' | 'large';
     buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
     icon?: boolean;
     iconStyle?: keyof typeof Icons;
-    iconPosition?: 'first' | 'last';
-    ovalEnds?: boolean;
+    iconPosition?: 'left' | 'right';
+    oval?: boolean;
     disabled?: boolean;
-    groupLength?: number;
     labels?: string[];
     onClick?: (index: number) => void;
 };
-declare const buttonGroup: React.FC<buttonGroupProps>;
-export default buttonGroup;
+declare const ButtonGroup: React.FC<ButtonGroupProps>;
+export default ButtonGroup;

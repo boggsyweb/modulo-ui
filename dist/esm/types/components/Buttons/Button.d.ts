@@ -11,6 +11,9 @@ type ButtonProps = {
     oval?: boolean;
     disabled?: boolean;
     label?: string;
+    isFirst?: boolean;
+    isLast?: boolean;
+    className?: string;
     onClick?: () => void;
 };
 declare const Button: React.FC<ButtonProps>;
