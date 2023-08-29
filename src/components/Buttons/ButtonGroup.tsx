@@ -66,13 +66,16 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
         buttonColor={buttonColor}
         disabled={disabled}
         oval={oval}
-        icon={icon}
         iconStyle={iconStyle}
         iconPosition={iconPosition}
         isFirst={index === 0 && groupLength > 1} 
           isLast={index === groupLength - 1 && groupLength > 1} 
         onClick={() => onClick && onClick(index)}
         labels={labels}
+        icon={icon && (
+          (iconPosition === 'left' && index === 0) ||
+          (iconPosition === 'right' && index === groupLength - 1)
+        )}
       />
     ))}
     </GroupContainer>

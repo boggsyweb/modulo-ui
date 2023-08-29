@@ -137,4 +137,15 @@ type CardProps = {
 };
 declare const Card: React.FC<CardProps>;
 
-export { Button, ButtonGroup, Card };
+type ToggleProps = {
+    ToggleColor?: keyof typeof colorThemes;
+    ToggleSize?: 'small' | 'large';
+    OutsideText?: boolean;
+    OutsideLeft?: string;
+    OutsideRight?: string;
+    disabled?: boolean;
+    onChange?: () => void;
+};
+declare const ToggleSwitch: React.FC<ToggleProps>;
+
+export { Button, ButtonGroup, Card, ToggleSwitch as Toggle };

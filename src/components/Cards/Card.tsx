@@ -46,9 +46,9 @@ type CardProps = {
       margin: .5rem 0;
     }
     width: ${(props) => {
-      if (props.CardSize === 'small') return '250px'; 
-      if (props.CardSize === 'medium') return '350px'; 
-      if (props.CardSize === 'large') return '600px'; 
+      if (props.CardSize === 'small') return '16.6em'; 
+      if (props.CardSize === 'medium') return '21.9em'; 
+      if (props.CardSize === 'large') return '37.5em'; 
 
     }};
     ${({ CardStyle }) => {
@@ -105,7 +105,7 @@ const Divider = styled.hr`
 `;
 const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
   gap: 1rem;
   padding-top: .8rem;
   border-top: 1.5px solid #ccc;

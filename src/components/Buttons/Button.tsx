@@ -127,6 +127,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       isFirst={isFirst}
       isLast={isLast}
+      iconPosition={iconPosition}
       className={className}
       onClick={onClick}
     >
