@@ -5,6 +5,7 @@ declare const meta: {
     component: import("react").FC<{
         ToggleColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
         ToggleSize?: "small" | "large" | undefined;
+        ToggleStyle?: "oval" | "rectangle" | undefined;
         OutsideText?: boolean | undefined;
         OutsideLeft?: string | undefined;
         OutsideRight?: string | undefined;
@@ -22,6 +23,7 @@ declare const meta: {
         OutsideRight: string;
         ToggleSize: "small";
         disabled: false;
+        ToggleStyle: "oval";
     };
 };
 export default meta;

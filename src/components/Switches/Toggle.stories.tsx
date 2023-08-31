@@ -16,7 +16,7 @@ const meta = {
         OutsideRight: 'off',
         ToggleSize: 'small',
         disabled: false,
-        
+        ToggleStyle: 'oval'
     }
 
 } satisfies Meta<typeof Toggle>;

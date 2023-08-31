@@ -5,6 +5,7 @@ import colorThemes from "../colorThemes";
 type ToggleProps = {
   ToggleColor?: keyof typeof colorThemes;
   ToggleSize?: 'small' | 'large';
+  ToggleStyle?: 'oval' | 'rectangle';
   OutsideText?: boolean;
   OutsideLeft?: string;
   OutsideRight?: string;
@@ -13,42 +14,25 @@ type ToggleProps = {
   onChange?: () => void;
 };
 
+
 const getTheme = (ToggleColor: keyof typeof colorThemes) => colorThemes[ToggleColor];
 
-const ToggleConfig = {
-  small: { 
-  buttonWidth: '3.2em',
-  buttonHeight: '1.48em',
-  toggleButtonBeforeWidth: '1.48em',
-  toggleButtonBeforeHeight: '1.48em',
-  translation: 'translate(1.7em, -50%)',
-  gap: '0.53em',},
 
-  large: { 
-  buttonWidth: '3.75em',
-  buttonHeight: '1.75em',
-  toggleButtonBeforeWidth: '1.75em',
-  toggleButtonBeforeHeight: '1.75em',
-  translation: 'translate(2em, -50%)',
-  gap: '0.625em',}
-}
-const getToggleStyle = (props: ToggleProps, theme: any) => {
-  const SizeConfig = ToggleConfig[props.ToggleSize || 'small'];
-  let styles = `
-  background-color: ${theme.primaryShade};
-  width: ${SizeConfig.buttonWidth}, ${SizeConfig.toggleButtonBeforeWidth};
-  height ${SizeConfig.buttonHeight}, ${SizeConfig.toggleButtonBeforeHeight};
-  transform: ${SizeConfig.translation};
-
+const commonToggleStyles = (props: ToggleProps) => `
+  background-color: ${getTheme(props.ToggleColor || 'indigo').primaryShade};
   ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
-  `;
-  return styles
-}
+`;
+
+const ToggleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1em;
+`;
 
 const ToggleLabel = styled.label<ToggleProps>`
 display: flex;
 align-items: center;
-gap: ${(props) => ToggleConfig[props.ToggleSize || 'small'].gap};
+gap: 0.53em;
 cursor: pointer;
 `;
 
@@ -56,31 +40,32 @@ const ToggleInput = styled.input<ToggleProps>`
   display: none;
 
   &:checked + span::before {
-    transform: ${(props) => ToggleConfig[props.ToggleSize || 'small'].translation};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: ${(props) => props.ToggleSize === 'small' ? 'translate(1.7em, -50%)' : 'translate(1.95em, -50%)'};
         background-color: #F5F5F5;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `;
 
 const ToggleButton = styled.span<ToggleProps>`
-position: relative;
-width: ${(props) => ToggleConfig[props.ToggleSize || 'small'].buttonWidth};
-height: ${(props) => ToggleConfig[props.ToggleSize || 'small'].buttonHeight};
-border-radius: 2em;
-padding: 4px;
-transition: 300ms all;
-${(props) => {
-  const theme = getTheme(props.ToggleColor || 'indigo');
-  return getToggleStyle(props, theme);
-}};
+    position: relative;
+    width: ${(props) => props.ToggleSize === 'small' ? '3.2em' : '3.68em'};
+    height: ${(props) => props.ToggleSize === 'small' ? '1.48em' : '1.7em'};
+    border-radius: ${(props) => props.ToggleStyle === 'oval' ? '2em' : '5px'};
+    padding: 4px;
+    transition: 300ms all;
+    ${commonToggleStyles}
+
   
   &::before {
     transition: 300ms all;
     content: "";
     position: absolute;
-    width: ${(props) => ToggleConfig[props.ToggleSize || 'small'].toggleButtonBeforeWidth};
-    height: ${(props) => ToggleConfig[props.ToggleSize || 'small'].toggleButtonBeforeHeight};
-    border-radius: 50px;
+    width: ${(props) => props.ToggleSize === 'small' ? '1.48em' : '1.7em'};
+    height: ${(props) => props.ToggleSize === 'small' ? '1.48em' : '1.7em'};
+    border-radius: ${(props) => props.ToggleStyle === 'oval' ? '2em' : '5px'};
     top: 50%;
     left: 4px;
     background: #333333;
@@ -92,15 +77,12 @@ const StyledText = styled.span`
   font-family: inherit;
   color: inherit;
 `;
-const ToggleWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1em;
-`;
+
 
 const ToggleSwitch: React.FC<ToggleProps> = ({
   ToggleColor = 'indigo',
   ToggleSize = 'small',
+  ToggleStyle = 'oval',
   OutsideText = false,
   OutsideLeft = 'on',
   OutsideRight = 'off',
@@ -134,6 +116,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
       ToggleColor={ToggleColor}
       ToggleSize={ToggleSize}
       disabled={disabled}
+      ToggleStyle={ToggleStyle}
       />
     </ToggleLabel>
           {OutsideText && <StyledText>{OutsideRight}</StyledText>}
