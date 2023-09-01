@@ -149,4 +149,27 @@ type ToggleProps = {
 };
 declare const ToggleSwitch: React.FC<ToggleProps>;
 
-export { Button, ButtonGroup, Card, ToggleSwitch as Toggle };
+type CheckboxProps = {
+    CheckboxColor?: keyof typeof colorThemes;
+    CheckboxSize?: 'small' | 'large';
+    disabled?: boolean;
+    name?: string;
+    id?: string;
+    label?: string;
+    onChange?: () => void;
+};
+declare const Checkbox: React.FC<CheckboxProps>;
+
+type RadioProps = {
+    RadioColor?: keyof typeof colorThemes;
+    RadioSize?: 'small' | 'large';
+    disabled?: boolean;
+    id?: string;
+    name?: string;
+    value?: string;
+    label?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+declare const Radio: React.FC<RadioProps>;
+
+export { Button, ButtonGroup, Card, Checkbox, Radio, ToggleSwitch };

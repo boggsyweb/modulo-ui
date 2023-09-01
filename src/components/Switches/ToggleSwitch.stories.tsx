@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Toggle from './Toggle';
+import Toggle from './ToggleSwitch';
 
 
 const meta = {
@@ -24,5 +24,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Standard: Story = {
+    args: {
+        ToggleColor: 'indigo'
+    }
     
 }

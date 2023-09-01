@@ -10,16 +10,14 @@ type ToggleProps = {
   OutsideLeft?: string;
   OutsideRight?: string;
   disabled?: boolean;
-  // toggleIcons?: boolean;
   onChange?: () => void;
 };
 
 
-const getTheme = (ToggleColor: keyof typeof colorThemes) => colorThemes[ToggleColor];
+const getTheme = (ToggleColor: keyof typeof colorThemes) => colorThemes [ToggleColor];
 
 
-const commonToggleStyles = (props: ToggleProps) => `
-  background-color: ${getTheme(props.ToggleColor || 'indigo').primaryShade};
+const DisabledStyle = (props: ToggleProps) => `
   ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
 `;
 
@@ -32,12 +30,13 @@ const ToggleWrapper = styled.div`
 const ToggleLabel = styled.label<ToggleProps>`
 display: flex;
 align-items: center;
-gap: 0.53em;
+justify-content: center;
 cursor: pointer;
+${DisabledStyle}
 `;
 
 const ToggleInput = styled.input<ToggleProps>`
-  display: none;
+  appearance: none;
 
   &:checked + span::before {
         display: flex;
@@ -46,6 +45,7 @@ const ToggleInput = styled.input<ToggleProps>`
         transform: ${(props) => props.ToggleSize === 'small' ? 'translate(1.7em, -50%)' : 'translate(1.95em, -50%)'};
         background-color: #F5F5F5;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
   }
 `;
 
@@ -56,13 +56,14 @@ const ToggleButton = styled.span<ToggleProps>`
     border-radius: ${(props) => props.ToggleStyle === 'oval' ? '2em' : '5px'};
     padding: 4px;
     transition: 300ms all;
-    ${commonToggleStyles}
+    background-color: ${props => getTheme(props.ToggleColor || 'indigo').primaryShade};
+ 
 
   
   &::before {
-    transition: 300ms all;
     content: "";
     position: absolute;
+    border: 1px solid #707070;
     width: ${(props) => props.ToggleSize === 'small' ? '1.48em' : '1.7em'};
     height: ${(props) => props.ToggleSize === 'small' ? '1.48em' : '1.7em'};
     border-radius: ${(props) => props.ToggleStyle === 'oval' ? '2em' : '5px'};
@@ -70,6 +71,7 @@ const ToggleButton = styled.span<ToggleProps>`
     left: 4px;
     background: #333333;
     transform: translate(0, -50%);
+    transition: 300ms all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `;
@@ -87,7 +89,6 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   OutsideLeft = 'on',
   OutsideRight = 'off',
   disabled = false,
-  // toggleIcons = false,
   onChange,
 }: ToggleProps) => {
   const [isToggled, setIsToggled] = useState(false);
@@ -104,18 +105,18 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           {OutsideText && <StyledText>{OutsideLeft}</StyledText>}
     <ToggleLabel
     disabled={disabled}
+    ToggleColor={ToggleColor}
     >
       <ToggleInput
         type="checkbox"
         checked={isToggled}
         onChange={onToggle}
+        ToggleColor={ToggleColor}
         ToggleSize={ToggleSize}
-        disabled={disabled}
       />
       <ToggleButton 
       ToggleColor={ToggleColor}
       ToggleSize={ToggleSize}
-      disabled={disabled}
       ToggleStyle={ToggleStyle}
       />
     </ToggleLabel>
