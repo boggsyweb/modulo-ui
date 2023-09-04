@@ -6,6 +6,7 @@ type ToggleProps = {
   ToggleColor?: keyof typeof colorThemes;
   ToggleSize?: 'small' | 'large';
   ToggleStyle?: 'oval' | 'rectangle';
+  // Can add text to just one side
   OutsideText?: boolean;
   OutsideLeft?: string;
   OutsideRight?: string;
@@ -45,7 +46,6 @@ const ToggleInput = styled.input<ToggleProps>`
         transform: ${(props) => props.ToggleSize === 'small' ? 'translate(1.7em, -50%)' : 'translate(1.95em, -50%)'};
         background-color: #F5F5F5;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
   }
 `;
 
@@ -57,9 +57,7 @@ const ToggleButton = styled.span<ToggleProps>`
     padding: 4px;
     transition: 300ms all;
     background-color: ${props => getTheme(props.ToggleColor || 'indigo').primaryShade};
- 
 
-  
   &::before {
     content: "";
     position: absolute;
@@ -74,6 +72,7 @@ const ToggleButton = styled.span<ToggleProps>`
     transition: 300ms all;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
+
 `;
 const StyledText = styled.span`
   font-family: inherit;

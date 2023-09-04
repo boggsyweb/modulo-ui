@@ -32,6 +32,7 @@ const CheckboxLabel = styled.label<CheckboxProps>`
 
 `;
 const CheckboxInput = styled.input<CheckboxProps>`
+    -webkit-appearance: none;
     appearance: none;
     display: grid;
     place-content: center;
@@ -64,7 +65,7 @@ const CheckboxInput = styled.input<CheckboxProps>`
 &:checked::before {
     transform: scale(1);
 }
-&:focus {
+&:focus &:hover{
     outline: max(2px, 0.15em) solid ${props => getTheme(props.CheckboxColor || 'indigo').primaryShade};
     outline-offset: max(2px, 0.15em);
 }

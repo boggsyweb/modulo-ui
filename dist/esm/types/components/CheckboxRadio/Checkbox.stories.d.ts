@@ -5,11 +5,12 @@ declare const meta: {
     component: import("react").FC<{
         CheckboxColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
         CheckboxSize?: "small" | "large" | undefined;
+        CheckboxStyle?: "solid" | "outline" | undefined;
         disabled?: boolean | undefined;
         name?: string | undefined;
         id?: string | undefined;
         label?: string | undefined;
-        onChange?: (() => void) | undefined;
+        onChange?: ((event: import("react").ChangeEvent<HTMLInputElement>) => void) | undefined;
     }>;
     tags: string[];
     parameters: {

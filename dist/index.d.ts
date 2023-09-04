@@ -81,6 +81,18 @@ declare const Icons: {
     kebab: () => React.JSX.Element;
     kebabVert: () => React.JSX.Element;
     close: () => React.JSX.Element;
+    user: () => React.JSX.Element;
+    userCircle: () => React.JSX.Element;
+    download: () => React.JSX.Element;
+    filter: () => React.JSX.Element;
+    link: () => React.JSX.Element;
+    linkBreak: () => React.JSX.Element;
+    heart: () => React.JSX.Element;
+    mail: () => React.JSX.Element;
+    mailOpen: () => React.JSX.Element;
+    sun: () => React.JSX.Element;
+    moon: () => React.JSX.Element;
+    rainbow: () => React.JSX.Element;
 };
 
 type ButtonProps = {
@@ -113,6 +125,17 @@ type ButtonGroupProps = {
     onClick?: (index: number) => void;
 };
 declare const ButtonGroup: React.FC<ButtonGroupProps>;
+
+type IconButtonProps = {
+    buttonColor?: keyof typeof colorThemes;
+    buttonSize?: 'small' | 'medium' | 'large';
+    buttonStyle?: 'solid' | 'outline' | 'ghostHover';
+    iconStyle?: keyof typeof Icons;
+    disabled?: boolean;
+    icon?: boolean;
+    onClick?: () => void;
+};
+declare const IconButton: React.FC<IconButtonProps>;
 
 type CardProps = {
     title?: boolean;
@@ -149,14 +172,30 @@ type ToggleProps = {
 };
 declare const ToggleSwitch: React.FC<ToggleProps>;
 
+type RangeProps = {
+    RangeColor?: keyof typeof colorThemes;
+    RangeSize?: 'small' | 'large';
+    disabled?: boolean;
+    min?: number;
+    max?: number;
+    step?: number;
+    value?: number;
+    id?: string;
+    name?: string;
+    list?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+declare const Range: React.FC<RangeProps>;
+
 type CheckboxProps = {
     CheckboxColor?: keyof typeof colorThemes;
     CheckboxSize?: 'small' | 'large';
+    CheckboxStyle?: 'solid' | 'outline';
     disabled?: boolean;
     name?: string;
     id?: string;
     label?: string;
-    onChange?: () => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare const Checkbox: React.FC<CheckboxProps>;
 
@@ -172,4 +211,4 @@ type RadioProps = {
 };
 declare const Radio: React.FC<RadioProps>;
 
-export { Button, ButtonGroup, Card, Checkbox, Radio, ToggleSwitch };
+export { Button, ButtonGroup, Card, Checkbox, IconButton, Radio, Range, ToggleSwitch };

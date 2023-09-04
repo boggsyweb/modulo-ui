@@ -3,11 +3,12 @@ import colorThemes from "../colorThemes";
 type CheckboxProps = {
     CheckboxColor?: keyof typeof colorThemes;
     CheckboxSize?: 'small' | 'large';
+    CheckboxStyle?: 'solid' | 'outline';
     disabled?: boolean;
     name?: string;
     id?: string;
     label?: string;
-    onChange?: () => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare const Checkbox: React.FC<CheckboxProps>;
 export default Checkbox;

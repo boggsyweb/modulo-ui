@@ -12,4 +12,16 @@ export declare const Icons: {
     kebab: () => React.JSX.Element;
     kebabVert: () => React.JSX.Element;
     close: () => React.JSX.Element;
+    user: () => React.JSX.Element;
+    userCircle: () => React.JSX.Element;
+    download: () => React.JSX.Element;
+    filter: () => React.JSX.Element;
+    link: () => React.JSX.Element;
+    linkBreak: () => React.JSX.Element;
+    heart: () => React.JSX.Element;
+    mail: () => React.JSX.Element;
+    mailOpen: () => React.JSX.Element;
+    sun: () => React.JSX.Element;
+    moon: () => React.JSX.Element;
+    rainbow: () => React.JSX.Element;
 };

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Toggle from './ToggleSwitch';
+import ToggleSwitch from './ToggleSwitch';
 
 
 const meta = {
-    title: "Library/Switches/Toggle",
-    component: Toggle,
+    title: "Library/Controls/Toggle",
+    component: ToggleSwitch,
     tags: ["autodocs"],
     parameters: {
         layout: 'centered'
@@ -19,7 +19,7 @@ const meta = {
         ToggleStyle: 'oval'
     }
 
-} satisfies Meta<typeof Toggle>;
+} satisfies Meta<typeof ToggleSwitch>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 

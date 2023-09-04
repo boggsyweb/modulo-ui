@@ -3,13 +3,16 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        CheckboxColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        CheckboxSize?: "small" | "large" | undefined;
-        CheckboxStyle?: "solid" | "outline" | undefined;
+        RangeColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        RangeSize?: "small" | "large" | undefined;
         disabled?: boolean | undefined;
-        name?: string | undefined;
+        min?: number | undefined;
+        max?: number | undefined;
+        step?: number | undefined;
+        value?: number | undefined;
         id?: string | undefined;
-        label?: string | undefined;
+        name?: string | undefined;
+        list?: string | undefined;
         onChange?: ((event: import("react").ChangeEvent<HTMLInputElement>) => void) | undefined;
     }>;
     tags: string[];
@@ -17,9 +20,12 @@ declare const meta: {
         layout: string;
     };
     args: {
-        CheckboxColor: "indigo";
-        CheckboxSize: "small";
+        RangeColor: "indigo";
+        RangeSize: "small";
         disabled: false;
+        min: number;
+        max: number;
+        step: number;
     };
 };
 export default meta;

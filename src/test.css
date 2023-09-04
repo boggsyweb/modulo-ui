@@ -1,5 +1,6 @@
 body {
-    color: #a9b8c7;
+    color: #7b7b7b;
     cursor:none;
+    filter:saturate();
 
 }
