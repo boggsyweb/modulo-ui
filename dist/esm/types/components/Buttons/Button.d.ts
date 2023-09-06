@@ -1,6 +1,6 @@
 import React from 'react';
-import colorThemes from '../colorThemes';
-import { Icons } from '../Icons';
+import colorThemes from '../../common/colorThemes';
+import { Icons } from '../../common/Icons';
 type ButtonProps = {
     buttonColor?: keyof typeof colorThemes;
     buttonSize?: 'small' | 'medium' | 'large';
@@ -13,7 +13,6 @@ type ButtonProps = {
     label?: string;
     isFirst?: boolean;
     isLast?: boolean;
-    className?: string;
     onClick?: () => void;
 };
 declare const Button: React.FC<ButtonProps>;

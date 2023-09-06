@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import colorThemes from '../colorThemes';
+import colorThemes from '../../common/colorThemes';
 import Button from '../Buttons/Button';
 
 type CardProps = {

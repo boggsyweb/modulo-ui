@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Range from './Range';
+import Range from '../components/Controls/Range';
 
 const meta = {
     title: "Library/Controls/Range",

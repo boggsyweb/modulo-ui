@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import colorThemes from '../colorThemes';
-import { Icons } from '../Icons';
+import colorThemes from '../../common/colorThemes';
+import { Icons } from '../../common/Icons';
 import Button from './Button';
 
 type ButtonGroupProps = {

@@ -1,4 +1,4 @@
-import colorThemes from '../colorThemes';
+import colorThemes from '../../common/colorThemes';
 import React from 'react';
 type RangeProps = {
     RangeColor?: keyof typeof colorThemes;

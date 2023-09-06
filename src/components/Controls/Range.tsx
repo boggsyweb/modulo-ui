@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import colorThemes from '../colorThemes';
+import colorThemes from '../../common/colorThemes';
 import React from 'react';
 
 type RangeProps = {

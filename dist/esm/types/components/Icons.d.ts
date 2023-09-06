@@ -1,6 +1,7 @@
 import React from "react";
 export declare const Icons: {
-    settings: () => React.JSX.Element;
+    settings1: () => React.JSX.Element;
+    settings2: () => React.JSX.Element;
     info: () => React.JSX.Element;
     search: () => React.JSX.Element;
     home: () => React.JSX.Element;
@@ -11,6 +12,7 @@ export declare const Icons: {
     burger: () => React.JSX.Element;
     kebab: () => React.JSX.Element;
     kebabVert: () => React.JSX.Element;
+    bento: () => React.JSX.Element;
     close: () => React.JSX.Element;
     user: () => React.JSX.Element;
     userCircle: () => React.JSX.Element;
@@ -24,4 +26,13 @@ export declare const Icons: {
     sun: () => React.JSX.Element;
     moon: () => React.JSX.Element;
     rainbow: () => React.JSX.Element;
+    check: () => React.JSX.Element;
+    lock: () => React.JSX.Element;
+    unlock: () => React.JSX.Element;
+    volumeMax: () => React.JSX.Element;
+    volumeMin: () => React.JSX.Element;
+    volumeOff: () => React.JSX.Element;
+    show: () => React.JSX.Element;
+    hide: () => React.JSX.Element;
+    shoppingCart: () => React.JSX.Element;
 };

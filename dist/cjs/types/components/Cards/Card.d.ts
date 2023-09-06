@@ -1,5 +1,5 @@
 import React from 'react';
-import colorThemes from '../colorThemes';
+import colorThemes from '../../common/colorThemes';
 type CardProps = {
     title?: boolean;
     CardTitle?: string;

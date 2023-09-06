@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ToggleSwitch from './ToggleSwitch';
+import ToggleSwitch from '../components/Controls/ToggleSwitch';
 
 
 const meta = {

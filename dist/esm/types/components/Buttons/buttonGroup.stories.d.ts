@@ -7,7 +7,7 @@ declare const meta: {
         buttonSize?: "small" | "medium" | "large" | undefined;
         buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
         icon?: boolean | undefined;
-        iconStyle?: "search" | "link" | "filter" | "settings" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | undefined;
+        iconStyle?: "search" | "link" | "filter" | "settings1" | "settings2" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "bento" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | "check" | "lock" | "unlock" | "volumeMax" | "volumeMin" | "volumeOff" | "show" | "hide" | "shoppingCart" | undefined;
         iconPosition?: "left" | "right" | undefined;
         oval?: boolean | undefined;
         disabled?: boolean | undefined;

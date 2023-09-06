@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import colorThemes from "../colorThemes";
+import colorThemes from "../../common/colorThemes";
 
 type ToggleProps = {
   ToggleColor?: keyof typeof colorThemes;
   ToggleSize?: 'small' | 'large';
   ToggleStyle?: 'oval' | 'rectangle';
-  // Can add text to just one side
   OutsideText?: boolean;
   OutsideLeft?: string;
   OutsideRight?: string;
@@ -14,9 +13,7 @@ type ToggleProps = {
   onChange?: () => void;
 };
 
-
 const getTheme = (ToggleColor: keyof typeof colorThemes) => colorThemes [ToggleColor];
-
 
 const DisabledStyle = (props: ToggleProps) => `
   ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
@@ -78,7 +75,6 @@ const StyledText = styled.span`
   font-family: inherit;
   color: inherit;
 `;
-
 
 const ToggleSwitch: React.FC<ToggleProps> = ({
   ToggleColor = 'indigo',

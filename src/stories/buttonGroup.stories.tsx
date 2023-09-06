@@ -1,27 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import IconButton from './IconButton';
+import buttonGroup from '../components/Buttons/ButtonGroup';
 
 const meta = {
-    title: "Library/Buttons/IconButton",
-    component: IconButton,
+    title: "Library/Buttons/ButtonGroup",
+    component: buttonGroup,
     tags: ["autodocs"],
     parameters: {
         layout: 'centered'
     },
     args: {
+        labels: ['Button1', 'Button2', 'Button3'],
         buttonColor: 'indigo',
+        icon: false,
         disabled: false,
-        icon: true,
+        oval: false,
+        iconPosition: 'left'
     },
-
-} satisfies Meta<typeof IconButton>;
+} satisfies Meta<typeof buttonGroup>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Solid: Story ={
+export const Solid: Story = {
     args: {
         buttonStyle: 'solid'
-    },    
+    },
 };
 export const Outline: Story = {
     args: {
@@ -31,5 +33,15 @@ export const Outline: Story = {
 export const ghostHover: Story = {
     args: {
         buttonStyle: 'ghostHover'
+    },
+};
+export const Icon: Story = {
+    args: {
+        icon: true
+    },
+};
+export const Oval: Story = {
+    args: {
+        oval: true
     },
 };

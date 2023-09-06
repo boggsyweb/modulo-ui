@@ -1,6 +1,6 @@
 import React from 'react';
-import colorThemes from '../colorThemes';
-import { Icons } from '../Icons';
+import colorThemes from '../../common/colorThemes';
+import { Icons } from '../../common/Icons';
 type ButtonGroupProps = {
     buttonColor?: keyof typeof colorThemes;
     buttonSize?: 'small' | 'medium' | 'large';

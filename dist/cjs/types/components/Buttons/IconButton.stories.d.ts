@@ -6,7 +6,7 @@ declare const meta: {
         buttonColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
         buttonSize?: "small" | "medium" | "large" | undefined;
         buttonStyle?: "solid" | "outline" | "ghostHover" | undefined;
-        iconStyle?: "search" | "link" | "filter" | "settings" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | undefined;
+        iconStyle?: "search" | "link" | "filter" | "settings1" | "settings2" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "bento" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | "check" | "lock" | "unlock" | "volumeMax" | "volumeMin" | "volumeOff" | "show" | "hide" | "shoppingCart" | undefined;
         disabled?: boolean | undefined;
         icon?: boolean | undefined;
         onClick?: (() => void) | undefined;
@@ -18,6 +18,7 @@ declare const meta: {
     args: {
         buttonColor: "indigo";
         disabled: false;
+        icon: true;
     };
 };
 export default meta;

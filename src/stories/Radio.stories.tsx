@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Radio from './Radio';
+import Radio from '../components/Selectors/Radio';
 
 const meta = {
     title: "Library/CheckboxRadio/Radio",

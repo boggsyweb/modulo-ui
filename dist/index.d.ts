@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 declare const colorThemes: {
     red: {
@@ -69,7 +69,8 @@ declare const colorThemes: {
 };
 
 declare const Icons: {
-    settings: () => React.JSX.Element;
+    settings1: () => React.JSX.Element;
+    settings2: () => React.JSX.Element;
     info: () => React.JSX.Element;
     search: () => React.JSX.Element;
     home: () => React.JSX.Element;
@@ -80,6 +81,7 @@ declare const Icons: {
     burger: () => React.JSX.Element;
     kebab: () => React.JSX.Element;
     kebabVert: () => React.JSX.Element;
+    bento: () => React.JSX.Element;
     close: () => React.JSX.Element;
     user: () => React.JSX.Element;
     userCircle: () => React.JSX.Element;
@@ -93,6 +95,15 @@ declare const Icons: {
     sun: () => React.JSX.Element;
     moon: () => React.JSX.Element;
     rainbow: () => React.JSX.Element;
+    check: () => React.JSX.Element;
+    lock: () => React.JSX.Element;
+    unlock: () => React.JSX.Element;
+    volumeMax: () => React.JSX.Element;
+    volumeMin: () => React.JSX.Element;
+    volumeOff: () => React.JSX.Element;
+    show: () => React.JSX.Element;
+    hide: () => React.JSX.Element;
+    shoppingCart: () => React.JSX.Element;
 };
 
 type ButtonProps = {
@@ -107,7 +118,6 @@ type ButtonProps = {
     label?: string;
     isFirst?: boolean;
     isLast?: boolean;
-    className?: string;
     onClick?: () => void;
 };
 declare const Button: React.FC<ButtonProps>;
@@ -211,4 +221,12 @@ type RadioProps = {
 };
 declare const Radio: React.FC<RadioProps>;
 
-export { Button, ButtonGroup, Card, Checkbox, IconButton, Radio, Range, ToggleSwitch };
+type ModalProps = {
+    isOpen?: boolean;
+    onClose: () => void;
+    children?: ReactNode;
+    OutsideClick?: boolean;
+};
+declare const Modal: React.FC<ModalProps>;
+
+export { Button, ButtonGroup, Card, Checkbox, IconButton, Modal, Radio, Range, ToggleSwitch };
