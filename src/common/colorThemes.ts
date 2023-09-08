@@ -5,21 +5,21 @@ const colorThemes = {
       hoverShade: '#ff000040'
     },
     pink: {
-      primaryShade: '#FFC0CB',
+      primaryShade: '#FFADBB',
       secondaryShade: '#333333',
-      hoverShade: '#FFC0CB40'
+      hoverShade: '#FFADBB40'
 
     },
     orange: {
-      primaryShade: '#F87315',
-      secondaryShade: '#333333',
-      hoverShade: '#F8731540'
+      primaryShade: '#FF6A00',
+      secondaryShade: '#F5F5F5',
+      hoverShade: '#FF6A0040'
 
     },
     yellow: {
-      primaryShade: '#FFFF00',
+      primaryShade: '#F5F500',
       secondaryShade: '#333333',
-      hoverShade: '#FFFF0040'
+      hoverShade: '#F5F50040'
 
     },
     green: {
@@ -29,9 +29,9 @@ const colorThemes = {
 
     },
     teal: {
-      primaryShade: '#0CA9A9',
+      primaryShade: '#0DBFBF',
       secondaryShade: '#0C0C0C',
-      hoverShade: '#0CA9A940'
+      hoverShade: '#0DBFBF40'
 
     },
     blue: {
@@ -47,15 +47,15 @@ const colorThemes = {
 
     },
     indigo: {
-      primaryShade: '#5135FF',
+      primaryShade: '#6901FB',
       secondaryShade: '#F5F5F5',
-      hoverShade: '#5135FF40'
+      hoverShade: '#6901FB40'
 
     },
     purple: {
-      primaryShade: '#9002D0',
+      primaryShade: '#8A02B2',
       secondaryShade: '#F5F5F5',
-      hoverShade: '#9002D040'
+      hoverShade: '#8A02B240'
 
     },
     gray: {
