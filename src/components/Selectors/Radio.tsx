@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 import colorThemes from "../../common/colorThemes";
 
 type RadioProps = {
-    RadioColor?: keyof typeof colorThemes;
-    RadioSize?: 'small' | 'large';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Disabled?: boolean;
     id?: string;
     name?: string;
     value?: string;
@@ -16,7 +16,7 @@ type RadioProps = {
 const getTheme = (RadioColor: keyof typeof colorThemes) => colorThemes[RadioColor];
 
 const DisabledStyle = (props: RadioProps) => `
-  ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
+  ${props.Disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
 `;
 
 
@@ -32,10 +32,10 @@ const RadioLabel = styled.label<RadioProps>`
 const RadioInput = styled.input<RadioProps>`
     appearance: none;
     margin: 0;
-    width: ${(props) => props.RadioSize === 'small' ? '1.15em' : '1.32em'} ;
-    height: ${(props) => props.RadioSize === 'small' ? '1.15em' : '1.32em'} ;
+    width: ${(props) => props.Size === 'small' ? '1.15em' : '1.32em'} ;
+    height: ${(props) => props.Size === 'small' ? '1.15em' : '1.32em'} ;
     border-radius: 50px;
-    border: .2em solid ${props => getTheme(props.RadioColor || 'indigo').primaryShade};
+    border: .2em solid ${props => getTheme(props.Color || 'indigo').primaryShade};
     
 
     &::before {
@@ -43,18 +43,18 @@ const RadioInput = styled.input<RadioProps>`
 
     }
     &:checked {
-        background-color: ${props => getTheme(props.RadioColor || 'indigo').primaryShade};
+        background-color: ${props => getTheme(props.Color || 'indigo').primaryShade};
     }
     &:focus {
-        outline: max(2px, 0.2em) solid ${props => getTheme(props.RadioColor || 'indigo').primaryShade};
+        outline: max(2px, 0.2em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
         outline-offset: max(2px, 0.15em);
     }
 `;
 
 const Radio: React.FC<RadioProps> = ({
-    RadioColor = 'indigo',
-    RadioSize = 'small',
-    disabled,
+    Color = 'indigo',
+    Size = 'small',
+    Disabled,
     name,
     id,
     label,
@@ -66,12 +66,12 @@ const Radio: React.FC<RadioProps> = ({
 return (
     <div>
         <RadioLabel
-        disabled={disabled}
+        Disabled={Disabled}
         >
             {label}
             <RadioInput
-            RadioColor={RadioColor}
-            RadioSize={RadioSize}
+            Color={Color}
+            Size={Size}
             type="radio"
             name={name}
             id={id}

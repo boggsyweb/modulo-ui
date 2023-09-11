@@ -3,9 +3,9 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        RadioColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        RadioSize?: "small" | "large" | undefined;
-        disabled?: boolean | undefined;
+        Color?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        Size?: "small" | "large" | undefined;
+        Disabled?: boolean | undefined;
         id?: string | undefined;
         name?: string | undefined;
         value?: string | undefined;
@@ -17,9 +17,9 @@ declare const meta: {
         layout: string;
     };
     args: {
-        RadioColor: "indigo";
-        RadioSize: "small";
-        disabled: false;
+        RadioColor: string;
+        RadioSize: string;
+        disabled: boolean;
     };
 };
 export default meta;

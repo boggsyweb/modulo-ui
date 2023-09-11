@@ -9,12 +9,12 @@ const meta = {
         layout: 'centered'
     },
     args: {
-        labels: ['Button1', 'Button2', 'Button3'],
-        buttonColor: 'indigo',
-        icon: false,
-        disabled: false,
-        oval: false,
-        iconPosition: 'left'
+        GroupLabel: ['Button1', 'Button2', 'Button3'],
+        Color: 'indigo',
+        Icon: false,
+        Disabled: false,
+        Oval: false,
+        IconPosition: 'left'
     },
 } satisfies Meta<typeof buttonGroup>;
 export default meta;
@@ -22,26 +22,26 @@ type Story = StoryObj<typeof meta>;
 
 export const Solid: Story = {
     args: {
-        buttonStyle: 'solid'
+        Style: 'solid'
     },
 };
 export const Outline: Story = {
     args: {
-        buttonStyle: 'outline'
+        Style: 'outline'
     },
 };
 export const ghostHover: Story = {
     args: {
-        buttonStyle: 'ghostHover'
+        Style: 'ghostHover'
     },
 };
 export const Icon: Story = {
     args: {
-        icon: true
+        Icon: true
     },
 };
 export const Oval: Story = {
     args: {
-        oval: true
+        Oval: true
     },
 };

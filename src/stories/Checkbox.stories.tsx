@@ -9,9 +9,9 @@ const meta = {
         layout: 'centered'
     },
     args: {
-        CheckboxColor: 'indigo',
-        CheckboxSize: 'small',
-        disabled: false,
+        Color: 'indigo',
+        Size: 'small',
+        Disabled: false,
     }
 } satisfies Meta<typeof Checkbox>;
 export default meta;

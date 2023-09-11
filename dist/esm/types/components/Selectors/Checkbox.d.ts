@@ -1,10 +1,10 @@
 import React from "react";
 import colorThemes from "../../common/colorThemes";
 type CheckboxProps = {
-    CheckboxColor?: keyof typeof colorThemes;
-    CheckboxSize?: 'small' | 'large';
-    CheckboxStyle?: 'solid' | 'outline';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Style?: 'solid' | 'outline';
+    Disabled?: boolean;
     name?: string;
     id?: string;
     label?: string;

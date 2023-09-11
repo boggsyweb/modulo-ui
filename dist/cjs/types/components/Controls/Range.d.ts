@@ -1,9 +1,9 @@
 import colorThemes from '../../common/colorThemes';
 import React from 'react';
 type RangeProps = {
-    RangeColor?: keyof typeof colorThemes;
-    RangeSize?: 'small' | 'large';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Disabled?: boolean;
     min?: number;
     max?: number;
     step?: number;

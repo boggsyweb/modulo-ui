@@ -107,15 +107,15 @@ declare const Icons: {
 };
 
 type ButtonProps = {
-    buttonColor?: keyof typeof colorThemes;
-    buttonSize?: 'small' | 'medium' | 'large';
-    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-    icon?: boolean;
-    iconStyle?: keyof typeof Icons;
-    iconPosition?: 'left' | 'right';
-    oval?: boolean;
-    disabled?: boolean;
-    label?: string;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'medium' | 'large';
+    Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    Icon?: boolean;
+    IconType?: keyof typeof Icons;
+    IconPosition?: 'left' | 'right';
+    Oval?: boolean;
+    Disabled?: boolean;
+    ButtonLabel?: string;
     isFirst?: boolean;
     isLast?: boolean;
     onClick?: () => void;
@@ -123,69 +123,65 @@ type ButtonProps = {
 declare const Button: React.FC<ButtonProps>;
 
 type ButtonGroupProps = {
-    buttonColor?: keyof typeof colorThemes;
-    buttonSize?: 'small' | 'medium' | 'large';
-    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-    icon?: boolean;
-    iconStyle?: keyof typeof Icons;
-    iconPosition?: 'left' | 'right';
-    oval?: boolean;
-    disabled?: boolean;
-    labels?: string[];
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'medium' | 'large';
+    Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    Icon?: boolean;
+    IconType?: keyof typeof Icons;
+    IconPosition?: 'left' | 'right';
+    Oval?: boolean;
+    Disabled?: boolean;
+    GroupLabel?: string[];
     onClick?: (index: number) => void;
 };
 declare const ButtonGroup: React.FC<ButtonGroupProps>;
 
 type IconButtonProps = {
-    buttonColor?: keyof typeof colorThemes;
-    buttonSize?: 'small' | 'medium' | 'large';
-    buttonStyle?: 'solid' | 'outline' | 'ghostHover';
-    iconStyle?: keyof typeof Icons;
-    disabled?: boolean;
-    icon?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'medium' | 'large';
+    Style?: 'solid' | 'outline' | 'ghostHover';
+    IconType?: keyof typeof Icons;
+    Disabled?: boolean;
+    Icon?: boolean;
     onClick?: () => void;
 };
 declare const IconButton: React.FC<IconButtonProps>;
 
 type CardProps = {
-    title?: boolean;
-    CardTitle?: string;
-    subtitle?: boolean;
-    CardSubtitle?: string;
-    description?: boolean;
-    CardDescription?: string;
+    Title?: string;
+    Subtitle?: string;
+    Description?: string;
     CardStyle?: 'standard' | 'border' | 'shadow';
-    CardSize?: 'small' | 'medium' | 'large';
-    image?: boolean;
+    Image?: boolean;
     ImageAlt?: string;
     ImageSrc?: string;
-    caption?: boolean;
     ImageCaption?: string;
-    divider?: boolean;
-    buttons?: boolean;
-    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-    buttonLabels?: string[];
-    buttonColor?: keyof typeof colorThemes;
+    Divider?: boolean;
+    Buttons?: boolean;
+    Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    Size?: 'small' | 'medium' | 'large';
+    ButtonLabel?: string[];
+    Color?: keyof typeof colorThemes;
     onClick?: (index: number) => void;
 };
 declare const Card: React.FC<CardProps>;
 
 type ToggleProps = {
-    ToggleColor?: keyof typeof colorThemes;
-    ToggleSize?: 'small' | 'large';
-    ToggleStyle?: 'oval' | 'rectangle';
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Style?: 'oval' | 'rectangle';
     OutsideText?: boolean;
     OutsideLeft?: string;
     OutsideRight?: string;
-    disabled?: boolean;
+    Disabled?: boolean;
     onChange?: () => void;
 };
 declare const ToggleSwitch: React.FC<ToggleProps>;
 
 type RangeProps = {
-    RangeColor?: keyof typeof colorThemes;
-    RangeSize?: 'small' | 'large';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Disabled?: boolean;
     min?: number;
     max?: number;
     step?: number;
@@ -198,10 +194,10 @@ type RangeProps = {
 declare const Range: React.FC<RangeProps>;
 
 type CheckboxProps = {
-    CheckboxColor?: keyof typeof colorThemes;
-    CheckboxSize?: 'small' | 'large';
-    CheckboxStyle?: 'solid' | 'outline';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Style?: 'solid' | 'outline';
+    Disabled?: boolean;
     name?: string;
     id?: string;
     label?: string;
@@ -210,9 +206,9 @@ type CheckboxProps = {
 declare const Checkbox: React.FC<CheckboxProps>;
 
 type RadioProps = {
-    RadioColor?: keyof typeof colorThemes;
-    RadioSize?: 'small' | 'large';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Disabled?: boolean;
     id?: string;
     name?: string;
     value?: string;

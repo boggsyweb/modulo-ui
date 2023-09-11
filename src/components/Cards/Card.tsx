@@ -4,24 +4,20 @@ import colorThemes from '../../common/colorThemes';
 import Button from '../Buttons/Button';
 
 type CardProps = {
-    title?: boolean;
-    CardTitle?: string;
-    subtitle?: boolean;
-    CardSubtitle?: string;
-    description?: boolean;
-    CardDescription?: string;
+    Title?: string;
+    Subtitle?: string;
+    Description?: string;
     CardStyle?: 'standard' | 'border' | 'shadow';
-    CardSize?: 'small' | 'medium' | 'large' ;
-    image?: boolean;
+    Image?: boolean;
     ImageAlt?: string;
     ImageSrc?: string;
-    caption?: boolean;
     ImageCaption?: string;
-    divider?: boolean;
-    buttons?: boolean;
-    buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-    buttonLabels?: string[];
-    buttonColor?: keyof typeof colorThemes;
+    Divider?: boolean;
+    Buttons?: boolean;
+    Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+    Size?: 'small' | 'medium' | 'large' ;
+    ButtonLabel?: string[];
+    Color?: keyof typeof colorThemes;
     onClick?: (index: number) => void;
   };
   
@@ -44,13 +40,8 @@ type CardProps = {
     }
     h3 {
       margin: .5rem 0;
-    }
-    width: ${(props) => {
-      if (props.CardSize === 'small') return '16.6em'; 
-      if (props.CardSize === 'medium') return '21.9em'; 
-      if (props.CardSize === 'large') return '37.5em'; 
 
-    }};
+    }
     ${({ CardStyle }) => {
       if (CardStyle === 'border') {
         return `
@@ -63,22 +54,7 @@ type CardProps = {
       }
       return '';
     }}
-    ${({ CardSize }) => {
-      if (CardSize === 'small') {
-        return `
-          font-size: 0.85rem;
-        `;
-      } else if (CardSize === 'medium') {
-        return `
-          font-size: 1rem;
-        `;
-      } else if (CardSize === 'large') {
-        return `
-          font-size: 1.3rem;
-        `;
-      }
-      return '';
-    }}
+  
   `;
   const ImageContainer = styled.div`
   width: 100%;
@@ -97,7 +73,7 @@ type CardProps = {
     opacity: 0.8;
   }
 `;
-const Divider = styled.hr`
+const StyledDivider = styled.hr`
   margin: 1em 0 0;
   height: 1.5px;
   border: none;
@@ -105,65 +81,59 @@ const Divider = styled.hr`
 `;
 const ButtonsContainer = styled.div`
   display: flex;
-  // justify-content: space-around;
   gap: 1rem;
   padding-top: .8rem;
   border-top: 1.5px solid #ccc;
 `;
   
   const Card: React.FC<CardProps> = ({
-    title = true,
-    CardTitle,
-    subtitle = true,
-    CardSubtitle,
-    description = true,
-    CardDescription,
+    Title,
+    Subtitle,
+    Description,
     CardStyle = 'standard',
-    CardSize = 'medium',
-    image = false,
+    Image = false,
     ImageSrc,
     ImageAlt,
-    caption = false,
     ImageCaption,
-    divider = false,
-    buttons = false,
-    buttonStyle = 'solid',
-    buttonColor = 'indigo',
-    buttonLabels = [],
+    Divider = false,
+    Buttons = false,
+    Size = 'medium',
+    Style = 'solid',
+    Color = 'indigo',
+    ButtonLabel = [],
     onClick
   }: CardProps) => {
-    const limitedButtonLabels = buttonLabels.slice(0, 2);
+    const limitedButtonLabels = ButtonLabel.slice(0, 2);
 
     return (
       <CardContainer 
       CardStyle={CardStyle} 
-      CardSize={CardSize}
-      CardTitle={CardTitle}
-      CardSubtitle={CardSubtitle}
-      CardDescription={CardDescription}
+      Title={Title}
+      Subtitle={Subtitle}
+      Description={Description}
       ImageAlt={ImageAlt} 
       ImageSrc={ImageSrc}
       ImageCaption={ImageCaption}
       >
-        {image && (
+        {Image && (
         <ImageContainer>
           <img src={ImageSrc} alt={ImageAlt} />
-          {caption && <p>{ImageCaption}</p>}
+          <p>{ImageCaption}</p>
         </ImageContainer>
          )}
-        {divider && image && <Divider />}
-        {title && <h2>{CardTitle}</h2>}
-        {subtitle && <h3>{CardSubtitle}</h3>}
-        {description && <p>{CardDescription}</p>}
-        {buttons && limitedButtonLabels.length > 0 && (
+        {Divider && Image && <StyledDivider />}
+       <h2>{Title}</h2>
+        <h3>{Subtitle}</h3>
+        <p>{Description}</p>
+        {Buttons && limitedButtonLabels.length > 0 && (
         <ButtonsContainer>
           {limitedButtonLabels.map((label, index) => (
             <Button
               key={index}
-              label={label}
-              buttonColor={buttonColor}
-              buttonSize={CardSize}
-              buttonStyle={buttonStyle}
+              ButtonLabel={label}
+              Color={Color}
+              Style={Style}
+              Size={Size}
               onClick={() => onClick && onClick(index)}
               />
           ))}

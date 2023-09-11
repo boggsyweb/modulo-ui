@@ -9,9 +9,9 @@ const meta = {
         layout: 'centered'
     },
     args: {
-        RangeColor: 'indigo',
-        RangeSize: 'small',
-        disabled: false,
+        Color: 'indigo',
+        Size: 'small',
+        Disabled: false,
         min: 1,
         max: 10,
         step: 1,

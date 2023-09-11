@@ -9,13 +9,14 @@ const meta = {
       layout: 'centered'
     },
     args: {
-        CardTitle: 'Card Component',
-        CardSubtitle: 'Card Subtitle',
-        CardDescription: 'Here is some text that is used for a brief description of this card',
+        Title: 'Card Component',
+        Subtitle: 'Card Subtitle',
+        Description: 'Here is some text that is used for a brief description of this card',
         ImageSrc: 'https://source.unsplash.com/KsOWP1sH6W4',
         ImageCaption: 'A caption for your image',
-        buttons: false,
-        buttonLabels: ['button1', 'button2'],
+        Buttons: false,
+        ButtonLabel: ['button1', 'button2'],
+        Size: 'medium',
     
     },
 } satisfies Meta<typeof Card>;
@@ -39,9 +40,9 @@ export const Shadow: Story = {
 };
 export const Buttons: Story = {
     args: {
-        buttons: true,
-        buttonStyle: 'solid',
-        buttonColor: 'indigo'
+        Buttons: true,
+        Style: 'solid',
+        Color: 'indigo'
     }
 }
 

@@ -9,11 +9,11 @@ const meta = {
         layout: 'centered'
       },
       args: {
-        label: 'Button',
-        buttonColor: 'indigo',
-        icon: false,
-        disabled: false,
-        oval: false
+        ButtonLabel: 'Button',
+        Color: 'indigo',
+        Icon: false,
+        Disabled: false,
+        Oval: false
       },
     } satisfies Meta<typeof Button>;
     export default meta;
@@ -21,22 +21,22 @@ const meta = {
 
 export const Solid: Story = {
     args: {
-        buttonStyle: 'solid'
+        Style: 'solid'
     },
 };
 export const Outline: Story = {
     args: {
-        buttonStyle: 'outline'
+        Style: 'outline'
     },
 };
 export const ghostHover: Story = {
     args: {
-        buttonStyle: 'ghostHover'
+        Style: 'ghostHover'
     },
 };
 export const link: Story = {
     args: {
-        buttonStyle: 'link'
+        Style: 'link'
     },
 };
 

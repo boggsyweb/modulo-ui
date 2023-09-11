@@ -5,15 +5,15 @@ import { Icons } from '../../common/Icons';
 import Button from './Button';
 
 type ButtonGroupProps = {
-  buttonColor?: keyof typeof colorThemes;
-  buttonSize?: 'small' | 'medium' | 'large';
-  buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-  icon?: boolean;
-  iconStyle?: keyof typeof Icons;
-  iconPosition?: 'left' | 'right';
-  oval?: boolean;
-  disabled?: boolean;
-  labels?: string[];
+  Color?: keyof typeof colorThemes;
+  Size?: 'small' | 'medium' | 'large';
+  Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+  Icon?: boolean;
+  IconType?: keyof typeof Icons;
+  IconPosition?: 'left' | 'right';
+  Oval?: boolean;
+  Disabled?: boolean;
+  GroupLabel?: string[];
   onClick?: (index: number) => void;
 };
 
@@ -26,14 +26,14 @@ const StyledButton = styled(Button)<ButtonGroupProps>`
   border-radius: ${(props) =>
     props.isFirst
       ? props.isLast
-        ? props.oval
+        ? props.Oval
           ? '100px'
           : '5px'
-        : props.oval
+        : props.Oval
         ? '100px 0 0 100px'
         : '5px 0 0 5px'
       : props.isLast
-      ? props.oval
+      ? props.Oval
         ? '0 100px 100px 0'
         : '0 5px 5px 0'
       : '0'};
@@ -41,40 +41,39 @@ const StyledButton = styled(Button)<ButtonGroupProps>`
 
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
-  buttonColor = 'indigo',
-  buttonSize = 'medium',
-  buttonStyle = 'solid',
-  icon = false,
-  iconPosition = 'left',
-  iconStyle = 'search',
-  oval = false,
-  disabled = false,
-  labels = [],
+  Color = 'indigo',
+  Size = 'medium',
+  Style = 'solid',
+  Icon = false,
+  IconPosition = 'left',
+  IconType = 'search',
+  Oval = false,
+  Disabled = false,
+  GroupLabel = [],
   onClick
 }: ButtonGroupProps) => {
-  const groupLength = labels.length;
+  const groupLength = GroupLabel.length;
 
   return (
     <GroupContainer>
       
-      {labels.map((label, index) => (
+      {GroupLabel.map((label, index) => (
         <StyledButton
         key={index}
-        label={label}
-        buttonSize={buttonSize}
-        buttonStyle={buttonStyle}
-        buttonColor={buttonColor}
-        disabled={disabled}
-        oval={oval}
-        iconStyle={iconStyle}
-        iconPosition={iconPosition}
+        Size={Size}
+        Style={Style}
+        Color={Color}
+        Disabled={Disabled}
+        Oval={Oval}
+        IconType={IconType}
+        IconPosition={IconPosition}
         isFirst={index === 0 && groupLength > 1} 
           isLast={index === groupLength - 1 && groupLength > 1} 
         onClick={() => onClick && onClick(index)}
-        labels={labels}
-        icon={icon && (
-          (iconPosition === 'left' && index === 0) ||
-          (iconPosition === 'right' && index === groupLength - 1)
+        ButtonLabel={label}
+        Icon={Icon && (
+          (IconPosition === 'left' && index === 0) ||
+          (IconPosition === 'right' && index === groupLength - 1)
         )}
       />
     ))}

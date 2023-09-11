@@ -10,13 +10,13 @@ const meta = {
         layout: 'centered'
     },
     args: {
-        ToggleColor: 'indigo',
+        Color: 'indigo',
         OutsideText: true,
         OutsideLeft: 'on',
         OutsideRight: 'off',
-        ToggleSize: 'small',
-        disabled: false,
-        ToggleStyle: 'oval'
+        Size: 'small',
+        Disabled: false,
+        Style: 'oval'
     }
 
 } satisfies Meta<typeof ToggleSwitch>;
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Standard: Story = {
     args: {
-        ToggleColor: 'indigo'
+        Color: 'indigo'
     }
     
 }

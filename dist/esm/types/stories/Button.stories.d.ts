@@ -3,15 +3,15 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        buttonColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        buttonSize?: "small" | "medium" | "large" | undefined;
-        buttonStyle?: "link" | "solid" | "outline" | "ghostHover" | undefined;
-        icon?: boolean | undefined;
-        iconStyle?: "search" | "link" | "filter" | "settings1" | "settings2" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "bento" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | "check" | "lock" | "unlock" | "volumeMax" | "volumeMin" | "volumeOff" | "show" | "hide" | "shoppingCart" | undefined;
-        iconPosition?: "left" | "right" | undefined;
-        oval?: boolean | undefined;
-        disabled?: boolean | undefined;
-        label?: string | undefined;
+        Color?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        Size?: "small" | "medium" | "large" | undefined;
+        Style?: "link" | "solid" | "outline" | "ghostHover" | undefined;
+        Icon?: boolean | undefined;
+        IconType?: "search" | "link" | "filter" | "settings1" | "settings2" | "info" | "home" | "send" | "copy" | "expandDown" | "expandUp" | "burger" | "kebab" | "kebabVert" | "bento" | "close" | "user" | "userCircle" | "download" | "linkBreak" | "heart" | "mail" | "mailOpen" | "sun" | "moon" | "rainbow" | "check" | "lock" | "unlock" | "volumeMax" | "volumeMin" | "volumeOff" | "show" | "hide" | "shoppingCart" | undefined;
+        IconPosition?: "left" | "right" | undefined;
+        Oval?: boolean | undefined;
+        Disabled?: boolean | undefined;
+        ButtonLabel?: string | undefined;
         isFirst?: boolean | undefined;
         isLast?: boolean | undefined;
         onClick?: (() => void) | undefined;
@@ -21,11 +21,11 @@ declare const meta: {
         layout: string;
     };
     args: {
-        label: string;
-        buttonColor: "indigo";
-        icon: false;
-        disabled: false;
-        oval: false;
+        ButtonLabel: string;
+        Color: "indigo";
+        Icon: false;
+        Disabled: false;
+        Oval: false;
     };
 };
 export default meta;

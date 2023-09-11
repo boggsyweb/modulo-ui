@@ -9,10 +9,10 @@ const meta = {
         layout: 'centered'
     },
     args: {
-        buttonColor: 'indigo',
-        disabled: false,
-        icon: true,
-        iconStyle: 'info'
+        Color: 'indigo',
+        Disabled: false,
+        Icon: true,
+        IconType: 'info'
     },
 
 } satisfies Meta<typeof IconButton>;
@@ -21,16 +21,16 @@ type Story = StoryObj<typeof meta>;
 
 export const Solid: Story ={
     args: {
-        buttonStyle: 'solid'
+        Style: 'solid'
     },    
 };
 export const Outline: Story = {
     args: {
-        buttonStyle: 'outline'
+        Style: 'outline'
     },
 };
 export const ghostHover: Story = {
     args: {
-        buttonStyle: 'ghostHover'
+        Style: 'ghostHover'
     },
 };

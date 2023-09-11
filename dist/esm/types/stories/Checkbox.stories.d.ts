@@ -3,10 +3,10 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        CheckboxColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        CheckboxSize?: "small" | "large" | undefined;
-        CheckboxStyle?: "solid" | "outline" | undefined;
-        disabled?: boolean | undefined;
+        Color?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        Size?: "small" | "large" | undefined;
+        Style?: "solid" | "outline" | undefined;
+        Disabled?: boolean | undefined;
         name?: string | undefined;
         id?: string | undefined;
         label?: string | undefined;
@@ -17,9 +17,9 @@ declare const meta: {
         layout: string;
     };
     args: {
-        CheckboxColor: "indigo";
-        CheckboxSize: "small";
-        disabled: false;
+        Color: "indigo";
+        Size: "small";
+        Disabled: false;
     };
 };
 export default meta;

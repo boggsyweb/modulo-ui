@@ -4,15 +4,15 @@ import colorThemes from '../../common/colorThemes';
 import { Icons } from '../../common/Icons';
 
 type ButtonProps = {
-  buttonColor?: keyof typeof colorThemes;
-  buttonSize?: 'small' | 'medium' | 'large';
-  buttonStyle?: 'solid' | 'outline' | 'ghostHover' | 'link';
-  icon?: boolean;
-  iconStyle?: keyof typeof Icons;
-  iconPosition?: 'left' | 'right';
-  oval?: boolean;
-  disabled?: boolean;
-  label?: string;
+  Color?: keyof typeof colorThemes;
+  Size?: 'small' | 'medium' | 'large';
+  Style?: 'solid' | 'outline' | 'ghostHover' | 'link';
+  Icon?: boolean;
+  IconType?: keyof typeof Icons;
+  IconPosition?: 'left' | 'right';
+  Oval?: boolean;
+  Disabled?: boolean;
+  ButtonLabel?: string;
   isFirst?: boolean;
   isLast?: boolean;
   onClick?: () => void;
@@ -24,24 +24,25 @@ const buttonConfig = {
   large: { fontSize: '1.32rem', padding: '10px 18px', iconSize: '28px' },
 };
 
-const getTheme = (buttonColor: keyof typeof colorThemes) => colorThemes[buttonColor];
+const getTheme = (Color: keyof typeof colorThemes) => colorThemes[Color];
 
-const getButtonSizeConfig = (buttonSize: ButtonProps['buttonSize'] = 'medium') =>
-  buttonConfig[buttonSize];
+const getSizeConfig = (Size: ButtonProps['Size'] = 'medium') =>
+  buttonConfig[Size];
 
-const getButtonStyle = (props: ButtonProps, theme: any) => {
-  const { buttonStyle, disabled } = props;
-  const { padding } = getButtonSizeConfig(props.buttonSize);
+const getStyle = (props: ButtonProps, theme: any) => {
+  const { Style, Disabled } = props;
+  const { padding } = getSizeConfig(props.Size);
 
   let styles = `
     background-color: ${theme.primaryShade};
     color: ${theme.secondaryShade};
     padding: ${padding};
+    border: 1.5px solid transparent;
    
-    ${disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
+    ${Disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
   `;
 
-  switch (buttonStyle) {
+  switch (Style) {
     case 'outline':
       styles += `
         background-color: transparent;
@@ -55,7 +56,7 @@ const getButtonStyle = (props: ButtonProps, theme: any) => {
         background-color: transparent;
         color: ${theme.primaryShade};
       `;
-      if (buttonStyle === 'ghostHover') {
+      if (Style === 'ghostHover') {
         styles += `
           &:hover { background-color: ${theme.hoverShade}; }
         `;
@@ -81,12 +82,12 @@ const StyledButton = styled.button<ButtonProps>`
   font-family: inherit;
   border: none;
   border-radius: ${(props) =>
-    props.isFirst && props.isLast ? (props.oval ? '100px' : '5px') : '0'};
+    props.isFirst && props.isLast ? (props.Oval ? '100px' : '5px') : '0'};
   cursor: pointer;
-  font-size: ${(props) => getButtonSizeConfig(props.buttonSize).fontSize};
+  font-size: ${(props) => getSizeConfig(props.Size).fontSize};
   ${(props) => {
-    const theme = getTheme(props.buttonColor || 'indigo');
-    return getButtonStyle(props, theme);
+    const theme = getTheme(props.Color || 'indigo');
+    return getStyle(props, theme);
   }};
 `;
 
@@ -103,37 +104,37 @@ const renderIcon = (size: string, IconComponent: React.ElementType) => (
 
 const Button: React.FC<ButtonProps> = (props) => {
   const {
-    buttonColor = 'indigo',
-    buttonSize = 'medium',
-    buttonStyle = 'solid',
-    icon = false,
-    iconStyle = 'search',
-    iconPosition = 'left',
-    oval = false,
-    disabled = false,
+    Color = 'indigo',
+    Size = 'medium',
+    Style = 'solid',
+    Icon = false,
+    IconType = 'search',
+    IconPosition = 'left',
+    Oval = false,
+    Disabled = false,
     isFirst = true,
     isLast = true,
-    label,
+    ButtonLabel,
     onClick,
   } = props;
 
-  const IconComponent = icon && iconStyle && Icons[iconStyle];
+  const IconComponent = Icon && IconType && Icons[IconType];
 
   return (
     <StyledButton
       {...props}
-      buttonColor={buttonColor}
-      buttonStyle={buttonStyle}
-      buttonSize={buttonSize}
-      oval={oval}
-      disabled={disabled}
+      Color={Color}
+      Style={Style}
+      Size={Size}
+      Oval={Oval}
+      Disabled={Disabled}
       isFirst={isFirst}
       isLast={isLast}
       onClick={onClick}
     >
-      {iconPosition === 'left' && IconComponent && renderIcon(getButtonSizeConfig(buttonSize).iconSize, IconComponent)}
-      {label}
-      {iconPosition === 'right' && IconComponent && renderIcon(getButtonSizeConfig(buttonSize).iconSize, IconComponent)}
+      {IconPosition === 'left' && IconComponent && renderIcon(getSizeConfig(Size).iconSize, IconComponent)}
+      {ButtonLabel}
+      {IconPosition === 'right' && IconComponent && renderIcon(getSizeConfig(Size).iconSize, IconComponent)}
     </StyledButton>
   );
 };

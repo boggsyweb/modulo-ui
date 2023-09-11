@@ -3,13 +3,13 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        ToggleColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        ToggleSize?: "small" | "large" | undefined;
-        ToggleStyle?: "oval" | "rectangle" | undefined;
+        Color?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        Size?: "small" | "large" | undefined;
+        Style?: "oval" | "rectangle" | undefined;
         OutsideText?: boolean | undefined;
         OutsideLeft?: string | undefined;
         OutsideRight?: string | undefined;
-        disabled?: boolean | undefined;
+        Disabled?: boolean | undefined;
         onChange?: (() => void) | undefined;
     }>;
     tags: string[];
@@ -17,13 +17,13 @@ declare const meta: {
         layout: string;
     };
     args: {
-        ToggleColor: "indigo";
+        Color: "indigo";
         OutsideText: true;
         OutsideLeft: string;
         OutsideRight: string;
-        ToggleSize: "small";
-        disabled: false;
-        ToggleStyle: "oval";
+        Size: "small";
+        Disabled: false;
+        Style: "oval";
     };
 };
 export default meta;

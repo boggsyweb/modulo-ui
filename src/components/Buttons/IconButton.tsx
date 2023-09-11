@@ -5,16 +5,16 @@ import { Icons } from '../../common/Icons';
 import Button from './Button';
 
 type IconButtonProps = {
-  buttonColor?: keyof typeof colorThemes;
-  buttonSize?: 'small' | 'medium' | 'large';
-  buttonStyle?: 'solid' | 'outline' | 'ghostHover' ;
-  iconStyle?: keyof typeof Icons;
-  disabled?: boolean;
-  icon?: boolean;
+  Color?: keyof typeof colorThemes;
+  Size?: 'small' | 'medium' | 'large';
+  Style?: 'solid' | 'outline' | 'ghostHover' ;
+  IconType?: keyof typeof Icons;
+  Disabled?: boolean;
+  Icon?: boolean;
   onClick?: () => void;
 }
 
-const Icon = styled(Button)<IconButtonProps>`
+const IconStyled = styled(Button)<IconButtonProps>`
     display: grid;
     justify-items: center;
     align-items: center;
@@ -23,22 +23,22 @@ const Icon = styled(Button)<IconButtonProps>`
 `;
 
 const IconButton: React.FC<IconButtonProps> = ({
-    buttonColor = 'indigo',
-    buttonSize = 'medium',
-    buttonStyle = 'solid',
-    icon = true,
-    iconStyle ='settings1',
-    disabled = false,
+    Color = 'indigo',
+    Size = 'medium',
+    Style = 'solid',
+    Icon = true,
+    IconType ='settings1',
+    Disabled = false,
 }: IconButtonProps) => {
 
     return (
-        <Icon 
-        buttonColor={buttonColor}
-        buttonSize={buttonSize}
-        buttonStyle={buttonStyle}
-        iconStyle={iconStyle}
-        icon={icon}
-        disabled={disabled}
+        <IconStyled
+        Color={Color}
+        Size={Size}
+        Style={Style}
+        IconType={IconType}
+        Icon={Icon}
+        Disabled={Disabled}
         />
     )
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import colorThemes from "../../common/colorThemes";
 type RadioProps = {
-    RadioColor?: keyof typeof colorThemes;
-    RadioSize?: 'small' | 'large';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Disabled?: boolean;
     id?: string;
     name?: string;
     value?: string;

@@ -3,10 +3,10 @@ import styled from "@emotion/styled";
 import colorThemes from "../../common/colorThemes";
 
 type CheckboxProps = {
-    CheckboxColor?: keyof typeof colorThemes;
-    CheckboxSize?: 'small' | 'large';
-    CheckboxStyle?: 'solid' | 'outline';
-    disabled?: boolean;
+    Color?: keyof typeof colorThemes;
+    Size?: 'small' | 'large';
+    Style?: 'solid' | 'outline';
+    Disabled?: boolean;
     name?: string;
     id?: string;
     label?: string;
@@ -15,7 +15,7 @@ type CheckboxProps = {
 const getTheme = (CheckboxColor: keyof typeof colorThemes) => colorThemes [CheckboxColor];
 
 const DisabledStyle = (props: CheckboxProps) => `
-  ${props.disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
+  ${props.Disabled ? 'opacity: 0.5; cursor: default; pointer-events: none;' : ''}
 `;
 
 const CheckboxContainer = styled.div`
@@ -38,45 +38,45 @@ const CheckboxInput = styled.input<CheckboxProps>`
     place-content: center;
     font: inherit;
     margin: 0;
-    width: ${(props) => props.CheckboxSize === 'small' ? '1.15em' : '1.32em'} ;
-    height: ${(props) => props.CheckboxSize === 'small' ? '1.15em' : '1.32em'} ;
+    width: ${(props) => props.Size === 'small' ? '1.15em' : '1.32em'} ;
+    height: ${(props) => props.Size === 'small' ? '1.15em' : '1.32em'} ;
     border-radius: 0.15em;
     transform: translateY(-0.1em);
-    border: .15em solid ${props => getTheme(props.CheckboxColor || 'indigo').primaryShade};
+    border: .15em solid ${props => getTheme(props.Color || 'indigo').primaryShade};
 
 
 &:before {
     content: "";
-    width: ${(props) => props.CheckboxSize === 'small' ? '0.65em' : '0.74em'};
-    height: ${(props) => props.CheckboxSize === 'small' ? '0.65em' : '0.74em'};
+    width: ${(props) => props.Size === 'small' ? '0.65em' : '0.74em'};
+    height: ${(props) => props.Size === 'small' ? '0.65em' : '0.74em'};
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transform: scale(0);
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1.5em 1.5em ${props => props.CheckboxStyle === 'solid' ? getTheme(props.CheckboxColor || 'indigo').secondaryShade : getTheme(props.CheckboxColor || 'indigo').primaryShade};
+    box-shadow: inset 1.5em 1.5em ${props => props.Style === 'solid' ? getTheme(props.Color || 'indigo').secondaryShade : getTheme(props.Color || 'indigo').primaryShade};
     
 
 }
 &:checked {
     position: relative;
-    background-color: ${(props) => props.CheckboxStyle === 'solid' ? getTheme(props.CheckboxColor || 'indigo').primaryShade : 'transparent'};
+    background-color: ${(props) => props.Style === 'solid' ? getTheme(props.Color || 'indigo').primaryShade : 'transparent'};
 
 }
 &:checked::before {
     transform: scale(1);
 }
 &:focus &:hover{
-    outline: max(2px, 0.15em) solid ${props => getTheme(props.CheckboxColor || 'indigo').primaryShade};
+    outline: max(2px, 0.15em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
     outline-offset: max(2px, 0.15em);
 }
 
 `;
 
 const Checkbox: React.FC<CheckboxProps> = ({ 
-    CheckboxColor = 'indigo',
-    CheckboxSize = 'small',
-    CheckboxStyle = 'outline',
-    disabled,
+    Color = 'indigo',
+    Size = 'small',
+    Style = 'outline',
+    Disabled,
     name, 
     id,
     label,
@@ -87,13 +87,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
   return (
     <CheckboxContainer>
       <CheckboxLabel
-        disabled={disabled}
+        Disabled={Disabled}
         >
           {label}
         <CheckboxInput
-        CheckboxColor={CheckboxColor}
-        CheckboxSize={CheckboxSize}
-        CheckboxStyle={CheckboxStyle}
+        Color={Color}
+        Size={Size}
+        Style={Style}
         type="checkbox" 
         name={name}
         id={id}

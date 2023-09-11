@@ -3,9 +3,9 @@ import type { StoryObj } from '@storybook/react';
 declare const meta: {
     title: string;
     component: import("react").FC<{
-        RangeColor?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
-        RangeSize?: "small" | "large" | undefined;
-        disabled?: boolean | undefined;
+        Color?: "red" | "pink" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "indigo" | "purple" | "gray" | "black" | "white" | undefined;
+        Size?: "small" | "large" | undefined;
+        Disabled?: boolean | undefined;
         min?: number | undefined;
         max?: number | undefined;
         step?: number | undefined;
@@ -20,9 +20,9 @@ declare const meta: {
         layout: string;
     };
     args: {
-        RangeColor: "indigo";
-        RangeSize: "small";
-        disabled: false;
+        Color: "indigo";
+        Size: "small";
+        Disabled: false;
         min: number;
         max: number;
         step: number;
