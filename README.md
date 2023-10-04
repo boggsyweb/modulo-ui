@@ -1,2 +1,2 @@
-# react-component-party
- A reusable React component library 
+# Modulo UI
+ A teeny, tiny component library 
