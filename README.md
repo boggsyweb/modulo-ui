@@ -21,14 +21,16 @@ Click here for the [Módulo UI](https://warm-beignet-6ffbce.netlify.app/) websit
 
 ## Installation
 
-
+with npm
 ```bash
- // with npm
  $ npm install modulo-ui
-
- // with yarn
- $ yarn add modulo-ui
 ```
+with yarn
+```bash
+ $ yarn add modulo-ui
+ ```
+
+
     
 ## Usage
 
