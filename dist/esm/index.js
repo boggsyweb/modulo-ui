@@ -72,7 +72,7 @@ import*as e from"react";import t,{forwardRef as r,useContext as n,useState as o,
   gap: 1rem;
   padding-top: .8rem;
   border-top: 1.5px solid #ccc;
-`,zt=e=>{!function(e){const{CardStyle:t,Size:r}=e;t&&!function(e){return["standard","border","shadow"].includes(e||"")}(t)&&console.warn(`Warning: Invalid Size prop '${t}' for Card component.`),r&&!function(e){return["small","medium","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for Card component.`)}(e);const{Title:r,Subtitle:n,Description:o,CardStyle:a="standard",Image:i=!1,ImageSrc:s,ImageAlt:c,ImageCaption:l,Divider:d=!1,Buttons:u=!1,Size:p="medium",Style:m="solid",Color:h="indigo",ButtonLabel:f=[],onClick:g}=e,v=f.slice(0,2);return t.createElement(_t,{CardStyle:a,Title:r,Subtitle:n,Description:o,ImageAlt:c,ImageSrc:s,ImageCaption:l},i&&t.createElement(Ot,null,t.createElement("img",{src:s,alt:c}),t.createElement("p",null,l)),d&&i&&t.createElement($t,null),t.createElement("h2",null,r),t.createElement("h3",null,n),t.createElement("p",null,o),u&&v.length>0&&t.createElement(Nt,null,v.map(((e,r)=>t.createElement(bt,{key:r,ButtonLabel:e,Color:h,Style:m,Size:p,onClick:()=>g&&g(r)})))))};function Mt(e){const{Color:t,Size:r}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for component.`)}const Ft=e=>mt[e],At=pt.div`
+`,zt=e=>{!function(e){const{CardStyle:t,Size:r}=e;t&&!function(e){return["standard","border","shadow"].includes(e||"")}(t)&&console.warn(`Warning: Invalid Size prop '${t}' for Card component.`),r&&!function(e){return["small","medium","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for Card component.`)}(e);const{Title:r,Subtitle:n,Description:o,CardStyle:a="standard",Image:i=!1,ImageSrc:s,ImageAlt:c,ImageCaption:l,Divider:d=!1,Buttons:u=!1,Size:p="medium",Style:m="solid",Color:h="indigo",ButtonLabel:f=[],onClick:g}=e,v=f.slice(0,2);return t.createElement(_t,{CardStyle:a,Title:r,Subtitle:n,Description:o,ImageAlt:c,ImageSrc:s,ImageCaption:l},i&&t.createElement(Ot,null,t.createElement("img",{src:s,alt:c}),t.createElement("p",null,l)),d&&i&&t.createElement($t,null),t.createElement("h2",null,r),t.createElement("h3",null,n),t.createElement("p",null,o),u&&v.length>0&&t.createElement(Nt,null,v.map(((e,r)=>t.createElement(bt,{key:r,ButtonLabel:e,Color:h,Style:m,Size:p,onClick:()=>g&&g(r)})))))};function Mt(e){const{Color:t,Size:r}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for control component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for control component.`)}const Ft=e=>mt[e],At=pt.div`
   display: flex;
   align-items: center;
   gap: 1em;
@@ -83,7 +83,7 @@ justify-content: center;
 cursor: pointer;
 ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""}\n`}
 
-&:focus {
+&:focus-visible {
   outline: max(2px, 0.15em) solid ${e=>Ft(e.Color||"indigo").secondaryShade};
   outline-offset: max(2px, 0.15em);
 }
@@ -98,7 +98,7 @@ ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""
         background-color: #F5F5F5;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  &:focus + span::before {
+  &:focus-visible + span::before {
     outline: max(2px, 0.15em) solid ${e=>Ft(e.Color||"indigo").secondaryShade};
     outline-offset: max(2px, 0.15em);
   }
@@ -140,11 +140,11 @@ ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""
     border-radius: 10px;
     ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""}\n`}
     
-    &:focus::-webkit-slider-thumb {
+    &:focus-visible::-webkit-slider-thumb {
       outline: max(2px, 0.2em) solid ${e=>Wt(e.Color||"indigo").primaryShade};
       outline-offset: max(2px, 0.15em);
   }
-    &:focus::-moz-range-thumb {
+    &:focus-visible::-moz-range-thumb {
       outline: max(2px, 0.2em) solid ${e=>Wt(e.Color||"indigo").primaryShade};
       outline-offset: max(2px, 0.15em);
     }
@@ -170,7 +170,7 @@ ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     border-radius: 50px;
   }
-  `,Vt=e=>{Mt(e);const{Color:r="indigo",Size:n="small",min:o,max:a,step:i,value:s,name:c,id:l,list:d,Disabled:u=!1,onChange:p}=e;return t.createElement(Pt,{Color:r,Size:n,Disabled:u,type:"range",min:o,max:a,step:i,value:s,name:c,list:d,id:l,onChange:p})};function Zt(e){const{Color:t,Size:r,Style:n}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for component.`),n&&!function(e){return["solid","outline"].includes(e||"")}(n)&&console.warn(`Warning: Invalid Style prop '${n}' for component.`)}const Rt=e=>mt[e],Ht=pt.div`
+  `,Vt=e=>{Mt(e);const{Color:r="indigo",Size:n="small",min:o,max:a,step:i,value:s,name:c,id:l,list:d,Disabled:u=!1,onChange:p}=e;return t.createElement(Pt,{Color:r,Size:n,Disabled:u,type:"range",min:o,max:a,step:i,value:s,name:c,list:d,id:l,onChange:p})};function Zt(e){const{Color:t,Size:r,Style:n}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for input component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for input component.`),n&&!function(e){return["solid","outline"].includes(e||"")}(n)&&console.warn(`Warning: Invalid Style prop '${n}' for input component.`)}const Rt=e=>mt[e],Ht=pt.div`
 display: flex;
 align-items: center;
 `,qt=pt.label`
@@ -215,7 +215,7 @@ align-items: center;
 &:checked::before {
     transform: scale(1);
 }
-&:focus {
+&:focus-visible {
     outline: max(2px, 0.15em) solid ${e=>Rt(e.Color||"indigo").primaryShade};
     outline-offset: max(2px, 0.15em);
 }
@@ -243,7 +243,7 @@ align-items: center;
     &:checked {
         background-color: ${e=>Gt(e.Color||"indigo").primaryShade};
     }
-    &:focus {
+    &:focus-visible {
         outline: max(2px, 0.2em) solid ${e=>Gt(e.Color||"indigo").primaryShade};
         outline-offset: max(2px, 0.15em);
     }
