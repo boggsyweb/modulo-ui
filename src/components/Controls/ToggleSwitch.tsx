@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
 import colorThemes from "../../common/colorThemes";
+import { validateControlProps } from "./propValidation";
 
 type ToggleProps = {
   Color?: keyof typeof colorThemes;
@@ -31,6 +32,11 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 ${DisabledStyle}
+
+&:focus-visible {
+  outline: max(2px, 0.15em) solid ${props => getTheme(props.Color || 'indigo').secondaryShade};
+  outline-offset: max(2px, 0.15em);
+}
 `;
 
 const ToggleInput = styled.input<ToggleProps>`
@@ -43,6 +49,10 @@ const ToggleInput = styled.input<ToggleProps>`
         transform: ${(props) => props.Size === 'small' ? 'translate(1.7em, -50%)' : 'translate(1.95em, -50%)'};
         background-color: #F5F5F5;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  &:focus-visible + span::before {
+    outline: max(2px, 0.15em) solid ${props => getTheme(props.Color || 'indigo').secondaryShade};
+    outline-offset: max(2px, 0.15em);
   }
 `;
 
@@ -76,7 +86,9 @@ const StyledText = styled.span`
   color: inherit;
 `;
 
-const ToggleSwitch: React.FC<ToggleProps> = ({
+const ToggleSwitch: React.FC<ToggleProps> = (props) => {
+  validateControlProps(props)
+  const {
   Color = 'indigo',
   Size = 'small',
   Style = 'oval',
@@ -85,8 +97,8 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   OutsideRight = 'off',
   Disabled = false,
   onChange,
-}: ToggleProps) => {
-  const [isToggled, setIsToggled] = useState(false);
+} = props;
+const [isToggled, setIsToggled] = useState(false);
 
   const onToggle = () => {
     setIsToggled(!isToggled);

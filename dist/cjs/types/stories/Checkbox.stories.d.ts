@@ -9,6 +9,7 @@ declare const meta: {
         Disabled?: boolean | undefined;
         name?: string | undefined;
         id?: string | undefined;
+        value?: string | undefined;
         label?: string | undefined;
         onChange?: ((event: import("react").ChangeEvent<HTMLInputElement>) => void) | undefined;
     }>;

@@ -40,7 +40,8 @@ const StyledButton = styled(Button)<ButtonGroupProps>`
 `;
 
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({
+const ButtonGroup: React.FC<ButtonGroupProps> = (
+  {
   Color = 'indigo',
   Size = 'medium',
   Style = 'solid',

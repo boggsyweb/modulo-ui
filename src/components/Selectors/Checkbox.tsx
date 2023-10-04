@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import colorThemes from "../../common/colorThemes";
+import { validateInputProps } from "./propValidation";
 
 type CheckboxProps = {
     Color?: keyof typeof colorThemes;
@@ -9,6 +10,7 @@ type CheckboxProps = {
     Disabled?: boolean;
     name?: string;
     id?: string;
+    value?: string;
     label?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -65,23 +67,26 @@ const CheckboxInput = styled.input<CheckboxProps>`
 &:checked::before {
     transform: scale(1);
 }
-&:focus &:hover{
+&:focus-visible {
     outline: max(2px, 0.15em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
     outline-offset: max(2px, 0.15em);
 }
 
 `;
 
-const Checkbox: React.FC<CheckboxProps> = ({ 
+const Checkbox: React.FC<CheckboxProps> = (props) => {
+  validateInputProps(props)
+  const { 
     Color = 'indigo',
     Size = 'small',
     Style = 'outline',
     Disabled,
     name, 
     id,
+    value,
     label,
     onChange,
-}: CheckboxProps) => {
+  } = props;
 
 
   return (
@@ -97,6 +102,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         type="checkbox" 
         name={name}
         id={id}
+        value={value}
         onChange={onChange} 
          />
       </CheckboxLabel>

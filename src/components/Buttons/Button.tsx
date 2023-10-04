@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import colorThemes from '../../common/colorThemes';
 import { Icons } from '../../common/Icons';
+import { validateButtonProps } from './propValidation';
 
 type ButtonProps = {
   Color?: keyof typeof colorThemes;
@@ -103,6 +104,7 @@ const renderIcon = (size: string, IconComponent: React.ElementType) => (
 );
 
 const Button: React.FC<ButtonProps> = (props) => {
+  validateButtonProps(props);
   const {
     Color = 'indigo',
     Size = 'medium',

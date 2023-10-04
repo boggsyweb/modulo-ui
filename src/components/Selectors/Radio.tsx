@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import colorThemes from "../../common/colorThemes";
+import { validateInputProps } from "./propValidation";
 
 type RadioProps = {
     Color?: keyof typeof colorThemes;
@@ -45,13 +46,15 @@ const RadioInput = styled.input<RadioProps>`
     &:checked {
         background-color: ${props => getTheme(props.Color || 'indigo').primaryShade};
     }
-    &:focus {
+    &:focus-visible {
         outline: max(2px, 0.2em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
         outline-offset: max(2px, 0.15em);
     }
 `;
 
-const Radio: React.FC<RadioProps> = ({
+const Radio: React.FC<RadioProps> = (props) => {
+    validateInputProps(props)
+    const {
     Color = 'indigo',
     Size = 'small',
     Disabled,
@@ -60,7 +63,7 @@ const Radio: React.FC<RadioProps> = ({
     label,
     value,
     onChange,
-}: RadioProps) => {
+} = props;
 
 
 return (

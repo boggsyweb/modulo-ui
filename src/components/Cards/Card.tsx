@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import colorThemes from '../../common/colorThemes';
 import Button from '../Buttons/Button';
+import { validateCardProps } from './propValidation';
 
 type CardProps = {
     Title?: string;
@@ -86,7 +87,9 @@ const ButtonsContainer = styled.div`
   border-top: 1.5px solid #ccc;
 `;
   
-  const Card: React.FC<CardProps> = ({
+  const Card: React.FC<CardProps> = (props) => {
+    validateCardProps(props)
+    const {
     Title,
     Subtitle,
     Description,
@@ -102,8 +105,8 @@ const ButtonsContainer = styled.div`
     Color = 'indigo',
     ButtonLabel = [],
     onClick
-  }: CardProps) => {
-    const limitedButtonLabels = ButtonLabel.slice(0, 2);
+  } = props;
+  const limitedButtonLabels = ButtonLabel.slice(0, 2);
 
     return (
       <CardContainer 

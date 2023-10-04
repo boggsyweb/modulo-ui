@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import colorThemes from '../../common/colorThemes';
 import React from 'react';
+import { validateControlProps } from './propValidation';
 
 type RangeProps = {
     Color?: keyof typeof colorThemes;
@@ -31,8 +32,16 @@ const RangeInput = styled.input<RangeProps>`
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3)inset;
     border-radius: 10px;
     ${DisabledStyle}
-
+    
+    &:focus-visible::-webkit-slider-thumb {
+      outline: max(2px, 0.2em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
+      outline-offset: max(2px, 0.15em);
   }
+    &:focus-visible::-moz-range-thumb {
+      outline: max(2px, 0.2em) solid ${props => getTheme(props.Color || 'indigo').primaryShade};
+      outline-offset: max(2px, 0.15em);
+    }
+  
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -43,10 +52,9 @@ const RangeInput = styled.input<RangeProps>`
     border: 2px solid ${props => getTheme(props.Color || 'indigo').primaryShade};
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     border-radius: 50px;
-
   }
+  
   &::-moz-range-thumb {
-    appearance: none;
     width: ${(props) => props.Size === 'small' ? '2em' : '3.2em'};
     height: ${(props) => props.Size === 'small' ? '2em' : '3.2em'};
     background: ${props => getTheme(props.Color || 'indigo').secondaryShade};
@@ -54,10 +62,11 @@ const RangeInput = styled.input<RangeProps>`
     border: 2px solid ${props => getTheme(props.Color || 'indigo').primaryShade};
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     border-radius: 50px;
-
   }
   `;
-  const Range: React.FC<RangeProps> = ({ 
+  const Range: React.FC<RangeProps> = (props) => { 
+    validateControlProps(props);
+    const {
     Color = 'indigo',
     Size = 'small',
     min, 
@@ -69,8 +78,8 @@ const RangeInput = styled.input<RangeProps>`
     list,
     Disabled = false,
     onChange,
-}) => {
-    return (
+  } = props;
+  return (
       <RangeInput
       Color={Color}
       Size={Size}

@@ -1,8 +1,8 @@
 const colorThemes = {
     red: {
-      primaryShade: '#FF0000',
+      primaryShade: '#E00000',
       secondaryShade: '#F5F5F5',
-      hoverShade: '#ff000040'
+      hoverShade: '#E0000040'
     },
     pink: {
       primaryShade: '#FFADBB',
@@ -47,9 +47,9 @@ const colorThemes = {
 
     },
     indigo: {
-      primaryShade: '#6901FB',
+      primaryShade: '#7300FF',
       secondaryShade: '#F5F5F5',
-      hoverShade: '#6901FB40'
+      hoverShade: '#7300FF40'
 
     },
     purple: {

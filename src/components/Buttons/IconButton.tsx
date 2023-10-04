@@ -29,6 +29,7 @@ const IconButton: React.FC<IconButtonProps> = ({
     Icon = true,
     IconType ='settings1',
     Disabled = false,
+    onClick,
 }: IconButtonProps) => {
 
     return (
@@ -39,6 +40,7 @@ const IconButton: React.FC<IconButtonProps> = ({
         IconType={IconType}
         Icon={Icon}
         Disabled={Disabled}
+        onClick={onClick}
         />
     )
 }
