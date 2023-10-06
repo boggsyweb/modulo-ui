@@ -13,6 +13,7 @@ declare const meta: {
         id?: string | undefined;
         name?: string | undefined;
         list?: string | undefined;
+        label?: string | undefined;
         onChange?: ((event: import("react").ChangeEvent<HTMLInputElement>) => void) | undefined;
     }>;
     tags: string[];

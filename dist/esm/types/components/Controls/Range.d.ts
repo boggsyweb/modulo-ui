@@ -11,6 +11,7 @@ type RangeProps = {
     id?: string;
     name?: string;
     list?: string;
+    label?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare const Range: React.FC<RangeProps>;

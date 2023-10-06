@@ -170,7 +170,7 @@ ${e=>`\n  ${e.Disabled?"opacity: 0.5; cursor: default; pointer-events: none;":""
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
     border-radius: 50px;
   }
-  `,Vt=e=>{Mt(e);const{Color:r="indigo",Size:n="small",min:o,max:a,step:i,value:s,name:c,id:l,list:d,Disabled:u=!1,onChange:p}=e;return t.createElement(Pt,{Color:r,Size:n,Disabled:u,type:"range",min:o,max:a,step:i,value:s,name:c,list:d,id:l,onChange:p})};function Zt(e){const{Color:t,Size:r,Style:n}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for input component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for input component.`),n&&!function(e){return["solid","outline"].includes(e||"")}(n)&&console.warn(`Warning: Invalid Style prop '${n}' for input component.`)}const Rt=e=>mt[e],Ht=pt.div`
+  `,Vt=e=>{Mt(e);const{Color:r="indigo",Size:n="small",min:o,max:a,step:i,value:s,name:c,id:l,list:d,label:u,Disabled:p=!1,onChange:m}=e;return t.createElement(Pt,{Color:r,Size:n,Disabled:p,type:"range",min:o,max:a,step:i,value:s,name:c,list:d,id:l,label:u,onChange:m})};function Zt(e){const{Color:t,Size:r,Style:n}=e;t&&!function(e){return!!e&&void 0!==mt[e]}(t)&&console.warn(`Warning: Invalid Color prop '${t}' for input component.`),r&&!function(e){return["small","large"].includes(e||"")}(r)&&console.warn(`Warning: Invalid Size prop '${r}' for input component.`),n&&!function(e){return["solid","outline"].includes(e||"")}(n)&&console.warn(`Warning: Invalid Style prop '${n}' for input component.`)}const Rt=e=>mt[e],Ht=pt.div`
 display: flex;
 align-items: center;
 `,qt=pt.label`

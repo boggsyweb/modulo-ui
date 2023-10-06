@@ -30,6 +30,16 @@ export const Icons = {
             <path d="M12 11v5m0 5a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm.05-13v.1h-.1V8h.1Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         ),
+    warning: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 8.45v4M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm.05-5.55v.1h-.1v-.1h.1Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    help: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M9.146 9.074a2.998 2.998 0 0 1 5.28-.838A3 3 0 0 1 12 13v1m0 7a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm.05-4v.1h-.1V17h.1Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
     search: () => (
         <svg fill="none"        
         xmlns="http://www.w3.org/2000/svg" 
@@ -58,6 +68,11 @@ export const Icons = {
             <path d="M9 9V6.2c0-1.12 0-1.68.218-2.108.192-.377.497-.682.874-.874C10.52 3 11.08 3 12.2 3h5.6c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874C21 4.52 21 5.08 21 6.2v5.6c0 1.12 0 1.68-.218 2.108a2.002 2.002 0 0 1-.874.874C19.48 15 18.92 15 17.803 15H15M9 9H6.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C3 10.52 3 11.08 3 12.2v5.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h5.607c1.117 0 1.676 0 2.104-.218.376-.192.683-.498.874-.874.218-.428.218-.987.218-2.105V15M9 9h2.8c1.12 0 1.68 0 2.108.218a2 2 0 0 1 .874.874c.218.427.218.987.218 2.105V15" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         ),
+    command: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M9 15v3a3 3 0 1 1-3-3h3Zm0 0h6m-6 0V9m6 6v3a3 3 0 1 0 3-3h-3Zm0 0V9m0 0H9m6 0V6a3 3 0 1 1 3 3h-3ZM9 9V6a3 3 0 1 0-3 3h3Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
     expandDown: () => (
         <svg fill="none"        
         xmlns="http://www.w3.org/2000/svg" 
@@ -72,6 +87,36 @@ export const Icons = {
             <path d="m5 16 7-7 7 7" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         ),
+    expandLeft: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m15 19-7-7 7-7" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    expandRight: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m9 5 7 7-7 7" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    chevronDown: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m16 13-4 4-4-4m8-6-4 4-4-4" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    chevronUp: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m8 17 4-4 4 4m-8-6 4-4 4 4" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    chevronLeft: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m17 16-4-4 4-4m-6 8-4-4 4-4" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    chevronRight: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m13 8 4 4-4 4M7 8l4 4-4 4" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
     burger: () => (
         <svg fill="none"        
         xmlns="http://www.w3.org/2000/svg" 
@@ -106,6 +151,20 @@ export const Icons = {
             </g>
             </svg>
     ),
+    dragVertical: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 18a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM8 18a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM14 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM8 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM14 6a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM8 6a1 1 0 1 0 2 0 1 1 0 0 0-2 0Z"/>
+            </g>
+        </svg>
+    ),
+    dragHorizontal: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM6 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM18 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM6 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
+            </g>
+        </svg>
+    ),
     close: () => (
         <svg fill="none"         
         xmlns="http://www.w3.org/2000/svg" 
@@ -127,12 +186,22 @@ export const Icons = {
             <path d="M17.217 19.332A6.982 6.982 0 0 0 12 17c-2.073 0-3.935.9-5.217 2.332M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
     ),
+    users: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 20c0-1.742-1.67-3.223-4-3.773M15 20c0-2.21-2.686-4-6-4s-6 1.79-6 4m12-7a4 4 0 0 0 0-8m-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
     download: () => (
         <svg fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 24 24"><path d="M6 21h12M12 3v14m0 0 5-5m-5 5-5-5" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
     ),
+save: () => (
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M17 21H7m10 0h.803c1.118 0 1.677 0 2.104-.218.377-.192.683-.498.875-.874.218-.427.218-.987.218-2.105V9.22c0-.45 0-.675-.048-.889a1.994 1.994 0 0 0-.209-.545c-.106-.19-.256-.355-.55-.682l-2.755-3.062c-.341-.378-.514-.57-.721-.708a1.999 1.999 0 0 0-.61-.271C15.863 3 15.6 3 15.075 3H6.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C3 4.52 3 5.08 3 6.2v11.6c0 1.12 0 1.68.218 2.107.192.377.497.683.874.875.427.218.987.218 2.105.218H7m10 0v-3.803c0-1.118 0-1.678-.218-2.105a2.001 2.001 0 0 0-.875-.874C15.48 14 14.92 14 13.8 14h-3.6c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C7 15.52 7 16.08 7 17.2V21m8-14H9" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+),
     filter: () => (
         <svg fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -196,6 +265,14 @@ export const Icons = {
             <path d="M3 17v-2a9 9 0 1 1 18 0v2M6 17v-2a6 6 0 0 1 12 0v2m-9 0v-2a3 3 0 1 1 6 0v2" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
     ),
+    cookie: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12.152 4.087c0-.367-.052-.733-.152-1.087 4.968.005 8.994 4.04 9 9 .016 4.962-4.03 8.983-9 9-4.97.016-8.984-4.037-9-9 1.112.236 2.27-.002 3.15-.72a3.831 3.831 0 0 0 1.42-3.006 4.5 4.5 0 0 0-.07-.781 3.277 3.277 0 0 0 3.07-.351 3.69 3.69 0 0 0 1.582-3.055ZM3.002 7.002V7H3v.002h.002ZM8.002 3.002V3H8v.002h.002ZM4.002 3.002V3H4v.002h.002Z"/>
+                <path d="M10.002 17.002V17H10v.002h.002ZM15.002 15.002V15H15v.002h.002ZM11.002 12.002V12H11v.002h.002ZM16.002 10.002V10H16v.002h.002ZM3.002 7.002V7H3v.002h.002ZM8.002 3.002V3H8v.002h.002ZM4.002 3.002V3H4v.002h.002Z"/>
+            </g>
+        </svg>
+    ),
     check: () => (
         <svg fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -238,6 +315,37 @@ export const Icons = {
             <path d="m16.172 9.171 5.656 5.657m-5.656 0 5.656-5.657M7.48 15.407l1.676 2.073c.873 1.08 1.31 1.62 1.692 1.68a1 1 0 0 0 .891-.316c.261-.286.261-.98.261-2.37V7.525c0-1.39 0-2.084-.26-2.37a1 1 0 0 0-.892-.315c-.383.059-.82.599-1.692 1.68L7.48 8.593c-.176.218-.264.327-.373.406a1 1 0 0 1-.32.153c-.13.035-.27.035-.551.035H4.813c-.757 0-1.135 0-1.44.101A2 2 0 0 0 2.1 10.56C2 10.865 2 11.243 2 12c0 .756 0 1.134.1 1.44a2 2 0 0 0 1.273 1.271c.305.101.683.101 1.44.101h1.423c.28 0 .42 0 .55.036a1 1 0 0 1 .32.152c.11.079.198.188.374.406Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
     ),
+    play: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 17.334V6.667c0-.88 0-1.32.185-1.58a1 1 0 0 1 .687-.412c.317-.04.705.166 1.48.58l10 5.333.004.002c.857.457 1.286.686 1.427.99.122.266.122.573 0 .839-.141.305-.571.535-1.43.993l-10 5.333c-.777.414-1.164.62-1.48.58a1 1 0 0 1-.688-.412C5 18.653 5 18.213 5 17.333Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    stop: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 8.2v7.6c0 1.12 0 1.68.218 2.107.192.377.497.683.874.875.427.218.987.218 2.105.218h7.607c1.118 0 1.676 0 2.104-.218.376-.192.682-.498.874-.875.218-.427.218-.986.218-2.104V8.197c0-1.118 0-1.678-.218-2.105a2 2 0 0 0-.874-.874C17.48 5 16.92 5 15.8 5H8.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C5 6.52 5 7.08 5 8.2Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    pause: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 5.5v13c0 .465 0 .697.038.89a2 2 0 0 0 1.571 1.572c.194.038.426.038.89.038.465 0 .698 0 .892-.038a2 2 0 0 0 1.57-1.572C20 19.2 20 18.97 20 18.512V5.488c0-.457 0-.687-.038-.879a2 2 0 0 0-1.572-1.57C18.197 3 17.965 3 17.5 3s-.697 0-.89.038a1.999 1.999 0 0 0-1.572 1.571C15 4.803 15 5.035 15 5.5ZM4 5.5v13c0 .465 0 .697.038.89a2 2 0 0 0 1.571 1.572c.194.038.426.038.89.038.465 0 .698 0 .892-.038a2 2 0 0 0 1.57-1.572C9 19.2 9 18.97 9 18.512V5.488c0-.457 0-.687-.038-.879A2 2 0 0 0 7.39 3.04C7.197 3 6.965 3 6.5 3s-.697 0-.89.038A1.999 1.999 0 0 0 4.037 4.61C4 4.803 4 5.035 4 5.5Z"/>
+            </g>
+        </svg>
+    ),
+    forward: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 12V7l9 5-9 5v-5Zm0 0-9 5V7l9 5Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    rewind: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m12 12 9 5V7l-9 5Zm0 0V7l-9 5 9 5v-5Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+    shuffle: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 20 3-3m0 0-3-3m3 3h-4a5 5 0 0 1-5-5 5 5 0 0 0-5-5H3m15-3 3 3m0 0-3 3m3-3h-4a4.978 4.978 0 0 0-3 1M3 17h4a4.978 4.978 0 0 0 3-1" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
     show: () => (
         <svg fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
@@ -260,5 +368,11 @@ export const Icons = {
         viewBox="0 0 24 24">
             <path d="M17 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0H9.294c-.461 0-.692 0-.882-.082a1.002 1.002 0 0 1-.418-.337c-.12-.167-.167-.39-.261-.83L5.27 4.264c-.096-.451-.145-.677-.265-.845a1.003 1.003 0 0 0-.419-.338C4.397 3 4.167 3 3.707 3H3m3 3h12.873c.722 0 1.082 0 1.325.15a1 1 0 0 1 .435.579c.077.274-.022.621-.222 1.314l-1.385 4.8c-.12.415-.18.622-.3.776a1.004 1.004 0 0 1-.409.307c-.18.074-.396.074-.825.074H7.73M8 21a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-    )
+    ),
+    trash: () => (
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M14 10v7m-4-7v7M6 6v11.8c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h5.606c1.118 0 1.677 0 2.104-.218.377-.192.683-.498.875-.874.218-.428.218-.987.218-2.105V6M6 6h2M6 6H4m4 0h8M8 6c0-.932 0-1.398.152-1.765a2 2 0 0 1 1.082-1.083C9.602 3 10.068 3 11 3h2c.932 0 1.398 0 1.765.152a2 2 0 0 1 1.083 1.083C16 4.602 16 5.068 16 6m0 0h2m0 0h2" stroke="currentcolor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    ),
+
 }

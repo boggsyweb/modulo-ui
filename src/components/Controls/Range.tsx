@@ -14,6 +14,7 @@ type RangeProps = {
     id?: string;
     name?: string;
     list?: string;
+    label?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   }
   const getTheme = (RangeColor: keyof typeof colorThemes) => colorThemes [RangeColor];
@@ -76,6 +77,7 @@ const RangeInput = styled.input<RangeProps>`
     name, 
     id,
     list,
+    label,
     Disabled = false,
     onChange,
   } = props;
@@ -92,6 +94,7 @@ const RangeInput = styled.input<RangeProps>`
         name={name}
         list={list}
         id={id}
+        label={label}
         onChange={onChange}
       />
     );
