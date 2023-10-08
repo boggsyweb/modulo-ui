@@ -77,7 +77,7 @@ const RangeInput = styled.input<RangeProps>`
     name, 
     id,
     list,
-    label,
+    label ='range',
     Disabled = false,
     onChange,
   } = props;
@@ -94,7 +94,7 @@ const RangeInput = styled.input<RangeProps>`
         name={name}
         list={list}
         id={id}
-        label={label}
+        aria-label={label}
         onChange={onChange}
       />
     );

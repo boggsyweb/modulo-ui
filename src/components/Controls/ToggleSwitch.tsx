@@ -11,6 +11,7 @@ type ToggleProps = {
   OutsideLeft?: string;
   OutsideRight?: string;
   Disabled?: boolean;
+  label?: string;
   onChange?: () => void;
 };
 
@@ -96,6 +97,7 @@ const ToggleSwitch: React.FC<ToggleProps> = (props) => {
   OutsideLeft = 'on',
   OutsideRight = 'off',
   Disabled = false,
+  label = 'toggle switch',
   onChange,
 } = props;
 const [isToggled, setIsToggled] = useState(false);
@@ -120,6 +122,8 @@ const [isToggled, setIsToggled] = useState(false);
         onChange={onToggle}
         Color={Color}
         Size={Size}
+        aria-label={label}
+
       />
       <ToggleButton 
       Color={Color}
