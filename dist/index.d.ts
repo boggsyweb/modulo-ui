@@ -73,11 +73,19 @@ declare const Icons: {
     settings2: () => React.JSX.Element;
     info: () => React.JSX.Element;
     warning: () => React.JSX.Element;
+    restricted: () => React.JSX.Element;
     help: () => React.JSX.Element;
+    exit: () => React.JSX.Element;
     search: () => React.JSX.Element;
+    magnify: () => React.JSX.Element;
     home: () => React.JSX.Element;
+    mapPin: () => React.JSX.Element;
+    flag: () => React.JSX.Element;
+    globe: () => React.JSX.Element;
+    navigation: () => React.JSX.Element;
     send: () => React.JSX.Element;
     copy: () => React.JSX.Element;
+    chat: () => React.JSX.Element;
     command: () => React.JSX.Element;
     expandDown: () => React.JSX.Element;
     expandUp: () => React.JSX.Element;
@@ -98,8 +106,12 @@ declare const Icons: {
     userCircle: () => React.JSX.Element;
     users: () => React.JSX.Element;
     download: () => React.JSX.Element;
+    cloudDownload: () => React.JSX.Element;
+    cloudUpload: () => React.JSX.Element;
+    file: () => React.JSX.Element;
     save: () => React.JSX.Element;
     filter: () => React.JSX.Element;
+    filterOff: () => React.JSX.Element;
     link: () => React.JSX.Element;
     linkBreak: () => React.JSX.Element;
     heart: () => React.JSX.Element;
@@ -110,6 +122,7 @@ declare const Icons: {
     rainbow: () => React.JSX.Element;
     cookie: () => React.JSX.Element;
     check: () => React.JSX.Element;
+    checkAll: () => React.JSX.Element;
     lock: () => React.JSX.Element;
     unlock: () => React.JSX.Element;
     volumeMax: () => React.JSX.Element;
@@ -125,6 +138,7 @@ declare const Icons: {
     hide: () => React.JSX.Element;
     shoppingCart: () => React.JSX.Element;
     trash: () => React.JSX.Element;
+    trashEmpty: () => React.JSX.Element;
 };
 
 type ButtonProps = {
@@ -164,6 +178,7 @@ type IconButtonProps = {
     IconType?: keyof typeof Icons;
     Disabled?: boolean;
     Icon?: boolean;
+    label?: string;
     onClick?: () => void;
 };
 declare const IconButton: React.FC<IconButtonProps>;
@@ -195,6 +210,7 @@ type ToggleProps = {
     OutsideLeft?: string;
     OutsideRight?: string;
     Disabled?: boolean;
+    label?: string;
     onChange?: () => void;
 };
 declare const ToggleSwitch: React.FC<ToggleProps>;

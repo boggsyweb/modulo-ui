@@ -8,6 +8,7 @@ type ToggleProps = {
     OutsideLeft?: string;
     OutsideRight?: string;
     Disabled?: boolean;
+    label?: string;
     onChange?: () => void;
 };
 declare const ToggleSwitch: React.FC<ToggleProps>;

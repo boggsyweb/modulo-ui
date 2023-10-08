@@ -10,6 +10,7 @@ declare const meta: {
         OutsideLeft?: string | undefined;
         OutsideRight?: string | undefined;
         Disabled?: boolean | undefined;
+        label?: string | undefined;
         onChange?: (() => void) | undefined;
     }>;
     tags: string[];

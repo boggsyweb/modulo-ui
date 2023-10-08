@@ -84,7 +84,7 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
     name, 
     id,
     value,
-    label,
+    label="checkbox",
     onChange,
   } = props;
 
@@ -103,6 +103,7 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
         name={name}
         id={id}
         value={value}
+        aria-label={label}
         onChange={onChange} 
          />
       </CheckboxLabel>

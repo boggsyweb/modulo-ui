@@ -60,7 +60,7 @@ const Radio: React.FC<RadioProps> = (props) => {
     Disabled,
     name,
     id,
-    label,
+    label="radio button",
     value,
     onChange,
 } = props;
@@ -79,6 +79,7 @@ return (
             name={name}
             id={id}
             value={value}
+            aria-label={label}
             onChange={onChange} 
             />
         </RadioLabel>

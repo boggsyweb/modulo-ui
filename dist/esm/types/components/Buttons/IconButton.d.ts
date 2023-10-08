@@ -8,6 +8,7 @@ type IconButtonProps = {
     IconType?: keyof typeof Icons;
     Disabled?: boolean;
     Icon?: boolean;
+    label?: string;
     onClick?: () => void;
 };
 declare const IconButton: React.FC<IconButtonProps>;

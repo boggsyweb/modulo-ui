@@ -11,6 +11,7 @@ type IconButtonProps = {
   IconType?: keyof typeof Icons;
   Disabled?: boolean;
   Icon?: boolean;
+  label?: string;
   onClick?: () => void;
 }
 
@@ -29,6 +30,7 @@ const IconButton: React.FC<IconButtonProps> = ({
     Icon = true,
     IconType ='settings1',
     Disabled = false,
+    label= 'icon button',
     onClick,
 }: IconButtonProps) => {
 
@@ -40,6 +42,7 @@ const IconButton: React.FC<IconButtonProps> = ({
         IconType={IconType}
         Icon={Icon}
         Disabled={Disabled}
+        aria-label={label}
         onClick={onClick}
         />
     )
