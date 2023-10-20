@@ -2,7 +2,7 @@
 ![Logo](https://i.imgur.com/RpSAwKf.png)
 
 # Módulo UI
-Módulo UI is teeny tiny React component library designed to make building React projects easier. Módulo was started by  [Stephanie Boggs](https://github.com/boggsyweb) as a challenge to learn as much as possible about designing, building, packaging, and publishing a component library. The future for Módulo looks bright, as Stephanie will be getting collaborators in the near future to help grow the library into a (slightly) larger than "teeny tiny" size.
+Módulo UI is teeny tiny React component library designed to make building React projects easier. Módulo was started by  [Stephanie Boggs](https://github.com/boggsyweb) as a challenge to learn as much as possible about designing, building, packaging, and publishing a component library. The future looks bright, as Stephanie is working on some collaborative projects to help Módulo UI grow into a (slightly) larger than "teeny tiny" library.
 
 ## Table of contents
 
@@ -16,7 +16,7 @@ Módulo UI is teeny tiny React component library designed to make building React
 
 ## Documentation
 
-Click here for the [Módulo UI](https://warm-beignet-6ffbce.netlify.app/) website and for all of the up-to-date info.
+Click here for the [Módulo UI](https://papaya-heliotrope-64bb5b.netlify.app/) website and for all of the up-to-date info.
 
 
 ## Installation
@@ -53,7 +53,7 @@ import { Button } from 'modulo-ui'
         </>
       );
 ```
-For more in-depth examples, including how to overwrite default styles, go to the [Módulo UI website](https://warm-beignet-6ffbce.netlify.app/).
+For more in-depth examples, including how to overwrite default styles, go to the [Módulo UI website](https://papaya-heliotrope-64bb5b.netlify.app/).
 
 
 ## Authors
